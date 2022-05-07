@@ -1,0 +1,6 @@
+e9a579,127.0.0.1,GET,http://127.0.0.1:8000/,1651603697,,404
+e284f0,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1651603698,90f39d,404
+90f39d,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1651603698,,404
+1dbb4d,::1,GET,http://localhost:8000/,1651603732,,404
+2487fb,::1,GET,http://localhost:8000/favicon.ico,1651603733,4c9ce5,404
+4c9ce5,::1,GET,http://localhost:8000/favicon.ico,1651603733,,404
