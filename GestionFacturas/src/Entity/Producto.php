@@ -18,7 +18,7 @@ class Producto
     #[ORM\Column(type: 'string', length: 200)]
     private $nombre;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'float')]
     private $precio;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -27,8 +27,12 @@ class Producto
     #[ORM\OneToMany(mappedBy: 'producto', targetEntity: Detalle::class)]
     private $detalles;
 
-    public function __construct()
+    #[ORM\ManyToOne(targetEntity: Empresa::class, inversedBy: 'productos')]
+    private $empresa;
+
+    public function __construct($empresa)
     {
+        $this->setEmpresa($empresa);
         $this->detalles = new ArrayCollection();
     }
 
@@ -45,18 +49,6 @@ class Producto
     public function setNombre(string $nombre): self
     {
         $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    public function getPrecio(): ?int
-    {
-        return $this->precio;
-    }
-
-    public function setPrecio(int $precio): self
-    {
-        $this->precio = $precio;
 
         return $this;
     }
@@ -99,6 +91,37 @@ class Producto
                 $detalle->setProducto(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrecio(): ?float
+    {
+        return $this->precio;
+    }
+
+    public function setPrecio(float $precio): self
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    public function __toString(){
+        // para mostrar el nombre de la categoría en la selección
+        return $this->nombre;
+        // para mostrar el id de la categoría en la selección
+        // return $this->id;
+    }
+
+    public function getEmpresa(): ?Empresa
+    {
+        return $this->empresa;
+    }
+
+    public function setEmpresa(?Empresa $empresa): self
+    {
+        $this->empresa = $empresa;
 
         return $this;
     }

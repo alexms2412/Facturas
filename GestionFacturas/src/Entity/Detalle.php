@@ -16,7 +16,7 @@ class Detalle
     #[ORM\Column(type: 'integer')]
     private $Cantidad;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'float')]
     private $precio;
 
     #[ORM\ManyToOne(targetEntity: Pedido::class, inversedBy: 'detalles')]
@@ -38,18 +38,6 @@ class Detalle
     public function setCantidad(int $Cantidad): self
     {
         $this->Cantidad = $Cantidad;
-
-        return $this;
-    }
-
-    public function getPrecio(): ?int
-    {
-        return $this->precio;
-    }
-
-    public function setPrecio(int $precio): self
-    {
-        $this->precio = $precio;
 
         return $this;
     }
@@ -77,4 +65,24 @@ class Detalle
 
         return $this;
     }
+
+    public function getPrecio(): ?float
+    {
+        return $this->precio;
+    }
+
+    public function setPrecio(float $precio): self
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    public function __toString(){
+        // para mostrar el nombre de la categoría en la selección
+        return $this->producto;
+        // para mostrar el id de la categoría en la selección
+        // return $this->id;
+    }
+    
 }

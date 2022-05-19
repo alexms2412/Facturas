@@ -6,10 +6,12 @@ use App\Repository\EmpresaRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: EmpresaRepository::class)]
+#[UniqueEntity(fields: ['username'], message: 'There is already an account with this username')]
 class Empresa implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -50,11 +52,22 @@ class Empresa implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'empresa', targetEntity: Pedido::class)]
     private $pedidos;
 
+    #[ORM\OneToMany(mappedBy: 'empresa', targetEntity: Producto::class)]
+    private $productos;
+
+    #[ORM\OneToMany(mappedBy: 'empresa', targetEntity: Cliente::class)]
+    private $clientes;
+
     public function __construct()
     {
         $this->pedidos = new ArrayCollection();
+        $this->productos = new ArrayCollection();
+        $this->clientes = new ArrayCollection();
     }
 
+     /**
+     * @see UserInterface
+     */
     public function getId(): ?int
     {
         return $this->id;
@@ -233,6 +246,73 @@ class Empresa implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($pedido->getEmpresa() === $this) {
                 $pedido->setEmpresa(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString(){
+        // para mostrar el nombre de la categoría en la selección
+        return $this->nombreEmpresa;
+        // para mostrar el id de la categoría en la selección
+        // return $this->id;
+    }
+
+    /**
+     * @return Collection<int, Producto>
+     */
+    public function getProductos(): Collection
+    {
+        return $this->productos;
+    }
+
+    public function addProducto(Producto $producto): self
+    {
+        if (!$this->productos->contains($producto)) {
+            $this->productos[] = $producto;
+            $producto->setEmpresa($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProducto(Producto $producto): self
+    {
+        if ($this->productos->removeElement($producto)) {
+            // set the owning side to null (unless already changed)
+            if ($producto->getEmpresa() === $this) {
+                $producto->setEmpresa(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Cliente>
+     */
+    public function getClientes(): Collection
+    {
+        return $this->clientes;
+    }
+
+    public function addCliente(Cliente $cliente): self
+    {
+        if (!$this->clientes->contains($cliente)) {
+            $this->clientes[] = $cliente;
+            $cliente->setEmpresa($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCliente(Cliente $cliente): self
+    {
+        if ($this->clientes->removeElement($cliente)) {
+            // set the owning side to null (unless already changed)
+            if ($cliente->getEmpresa() === $this) {
+                $cliente->setEmpresa(null);
             }
         }
 

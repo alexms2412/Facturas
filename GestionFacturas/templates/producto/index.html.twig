@@ -1,20 +1,60 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
 
-{% block title %}Hello ProductoController!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block contenido %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<br>
+	<div>
+		<div>
+			<a href="/pedido" class="botonpedido botonesindex">Pedidos
+			</a>
+			<a href="/pedido/facturas" class="botonpedido botonesindex">Facturas</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/aleol/Desktop/Factuas/GestionFacturas/src/Controller/ProductoController.php'|file_link(0) }}">src/Controller/ProductoController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/aleol/Desktop/Factuas/GestionFacturas/templates/producto/index.html.twig'|file_link(0) }}">templates/producto/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+			<a href="{{ path('app_pedido_new') }}" class="botonpedido">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+				<i class="fa fa-file-text-o" aria-hidden="true"></i>
+			</a>
+
+			<a href="/cliente" class="botonpedido">
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</a>
+
+			<a href="/producto" class="botonpedido">
+
+				<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			</a>
+
+
+		</div>
+		<table class="tablePedidos">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nombre</th>
+					<th>Precio</th>
+					<th>Descripcion</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for producto in productos %}
+					<tr>
+						<td>{{ producto.id }}</td>
+						<td>{{ producto.nombre }}</td>
+						<td>{{ producto.precio }}</td>
+						<td>{{ producto.descripcion }}</td>
+						<td>
+							<a href="{{ path('app_producto_show', {'id': producto.id}) }}">Ver / </a>
+							<a href="{{ path('app_producto_edit', {'id': producto.id}) }}">Editar</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="5">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+
+	{% endblock %}

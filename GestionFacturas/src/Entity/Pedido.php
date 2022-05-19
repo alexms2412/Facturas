@@ -30,8 +30,12 @@ class Pedido
     #[ORM\ManyToOne(targetEntity: Cliente::class, inversedBy: 'pedidos')]
     private $cliente;
 
-    public function __construct()
+    #[ORM\Column(type: 'string', length: 50)]
+    private $nombrePedido;
+
+    public function __construct($empresa)
     {
+        $this->setEmpresa($empresa);
         $this->detalles = new ArrayCollection();
     }
 
@@ -114,6 +118,25 @@ class Pedido
     public function setCliente(?Cliente $cliente): self
     {
         $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    public function __toString(){
+        // para mostrar el nombre de la categoría en la selección
+        return $this->id;
+        // para mostrar el id de la categoría en la selección
+        // return $this->id;
+    }
+
+    public function getNombrePedido(): ?string
+    {
+        return $this->nombrePedido;
+    }
+
+    public function setNombrePedido(string $nombrePedido): self
+    {
+        $this->nombrePedido = $nombrePedido;
 
         return $this;
     }

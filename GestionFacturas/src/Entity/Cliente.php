@@ -6,6 +6,7 @@ use App\Repository\ClienteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: ClienteRepository::class)]
 class Cliente
@@ -33,8 +34,15 @@ class Cliente
     #[ORM\Column(type: 'string', length: 100)]
     private $correoElectronico;
 
-    public function __construct()
+    #[ORM\Column(type: 'string', length: 9)]
+    private $dni;
+
+    #[ORM\ManyToOne(targetEntity: Empresa::class, inversedBy: 'clientes')]
+    private $empresa;
+
+    public function __construct($empresa)
     {
+        $this->setEmpresa($empresa);
         $this->pedidos = new ArrayCollection();
     }
 
@@ -129,6 +137,38 @@ class Cliente
     public function setCorreoElectronico(string $correoElectronico): self
     {
         $this->correoElectronico = $correoElectronico;
+
+        return $this;
+    }
+
+    public function getDni(): ?string
+    {
+        return $this->dni;
+    }
+
+    public function setDni(string $dni): self
+    {
+        $this->dni = $dni;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        // para mostrar el nombre de la categoría en la selección
+        return $this->dni;
+        // para mostrar el id de la categoría en la selección
+        // return $this->id;
+    }
+
+    public function getEmpresa(): ?Empresa
+    {
+        return $this->empresa;
+    }
+
+    public function setEmpresa(?Empresa $empresa): self
+    {
+        $this->empresa = $empresa;
 
         return $this;
     }

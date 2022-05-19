@@ -1,0 +1,112 @@
+{% extends 'menu.html.twig' %}
+
+
+{% block contenido %}
+
+	<br>
+	<div>
+
+		<div>
+			<a href="/pedido" class="botonpedido botonesindex">Pedidos
+			</a>
+			<a href="/pedido/facturas" class="botonpedido botonesindex">Facturas</a>
+
+			<a href="{{ path('app_pedido_new') }}" class="botonpedido">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+				<i class="fa fa-file-text-o" aria-hidden="true"></i>
+			</a>
+
+			<a href="/cliente" class="botonpedido">
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</a>
+
+			<a href="/producto" class="botonpedido">
+
+				<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			</a>
+
+
+		</div>
+		<div class="hrposicion">
+			<hr width="100%" align="right" size="30">
+		</div>
+
+		<table class="tablePedidos">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Nombre Factura</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Cliente</th>
+					<th scope="col">Actions</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for pedido in pedidos %}
+
+					{% if pedido.estado == true %}
+
+
+						<tr>
+							<td>{{ pedido.id }}</td>
+							<td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
+							<td>{{ pedido.nombrePedido }}</td>
+							<td>{{ pedido.estado ? 'Factura' : 'Presupuesto' }}</td>
+							<td>{{ pedido.Cliente}}
+							</td>
+							<td>
+
+								<a href="{{ path('app_pedido_show', {'id': pedido.id}) }}">Ver / 
+								</a>
+								<a href="/descargar">
+									<i class="fa fa-download" aria-hidden="true"></i>
+								</a>
+
+							</td>
+
+						</tr>
+						{% else %}
+
+					{% endif %}
+
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<div class="posicionpaginado">
+			<ul class="pagination">
+				<li>
+					<a href="#">«</a>
+				</li>
+				<li>
+					<a href="#">1</a>
+				</li>
+				<li>
+					<a class="active" href="#">2</a>
+				</li>
+				<li>
+					<a href="#">3</a>
+				</li>
+				<li>
+					<a href="#">4</a>
+				</li>
+				<li>
+					<a href="#">5</a>
+				</li>
+				<li>
+					<a href="#">6</a>
+				</li>
+				<li>
+					<a href="#">7</a>
+				</li>
+				<li>
+					<a href="#">»</a>
+				</li>
+			</ul>
+
+		</div>
+
+
+	{% endblock %}
