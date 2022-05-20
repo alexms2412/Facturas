@@ -70,17 +70,22 @@ class __TwigTemplate_05bbd1876db174ddf2bc98b228e7f63725e3906154fd0173292b3d231d0
 \t\t<div class=\"row h-100 justify-content-center aling-items-center\">
 \t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
-\t\t\t\t<h1 class=\"tituloLogin\">Añadir Producto</h1>
+\t\t\t\t<h1 class=\"tituloLogin\">Añadir Producto
+\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/pedido\">
+\t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\"></i>
+
+\t\t\t\t\t</a>
+\t\t\t\t</h1>
 
 \t\t\t\t";
-        // line 12
+        // line 17
         echo twig_include($this->env, $context, "producto/_form.html.twig");
         echo "
 
-                <br>
+\t\t\t\t<br>
 
 \t\t\t\t<a href=\"";
-        // line 16
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_producto_index");
         echo "\">back to list</a>
 
@@ -110,7 +115,7 @@ class __TwigTemplate_05bbd1876db174ddf2bc98b228e7f63725e3906154fd0173292b3d231d0
 
     public function getDebugInfo()
     {
-        return array (  84 => 16,  77 => 12,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  89 => 21,  82 => 17,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -124,11 +129,16 @@ class __TwigTemplate_05bbd1876db174ddf2bc98b228e7f63725e3906154fd0173292b3d231d0
 \t\t<div class=\"row h-100 justify-content-center aling-items-center\">
 \t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
-\t\t\t\t<h1 class=\"tituloLogin\">Añadir Producto</h1>
+\t\t\t\t<h1 class=\"tituloLogin\">Añadir Producto
+\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/pedido\">
+\t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\"></i>
+
+\t\t\t\t\t</a>
+\t\t\t\t</h1>
 
 \t\t\t\t{{ include('producto/_form.html.twig') }}
 
-                <br>
+\t\t\t\t<br>
 
 \t\t\t\t<a href=\"{{ path('app_producto_index') }}\">back to list</a>
 

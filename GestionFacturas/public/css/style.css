@@ -104,3 +104,8 @@ ul.pagination li a:hover:not(.active) {
     padding-bottom: 40px;
     font-family: sans-serif;
 }
+
+.tituloLoginBotonCerrar {
+    font-family: sans-serif;
+    margin-left: 10px;
+}

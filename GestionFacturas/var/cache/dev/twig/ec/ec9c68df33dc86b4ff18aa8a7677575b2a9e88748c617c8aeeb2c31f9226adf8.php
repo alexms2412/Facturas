@@ -60,14 +60,23 @@ class __TwigTemplate_260e127596855d2442b0dea815e5c254b6ef76dbe755081912882507c70
 \t\trel=\"stylesheet\" type=\"text/css\" href=\"../css/style.css\"/>
 \t\t<!-- CSS only -->
 \t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
-\t\t
-        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+
+\t\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
+\t\t<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
+\t\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com/%22%3E\">
+\t\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com/\" crossorigin>
+
+
 \t</head>
 \t<body>
 \t\t";
-        // line 20
+        // line 29
         $this->displayBlock('body', $context, $blocks);
-        // line 21
+        // line 30
         echo "\t</body>
 </html>
 ";
@@ -99,7 +108,7 @@ class __TwigTemplate_260e127596855d2442b0dea815e5c254b6ef76dbe755081912882507c70
 
     }
 
-    // line 20
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -124,7 +133,7 @@ class __TwigTemplate_260e127596855d2442b0dea815e5c254b6ef76dbe755081912882507c70
 
     public function getDebugInfo()
     {
-        return array (  103 => 20,  83 => 6,  71 => 21,  69 => 20,  59 => 12,  54 => 8,  52 => 6,  45 => 1,);
+        return array (  112 => 29,  92 => 6,  80 => 30,  78 => 29,  59 => 12,  54 => 8,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -144,8 +153,17 @@ class __TwigTemplate_260e127596855d2442b0dea815e5c254b6ef76dbe755081912882507c70
 \t\trel=\"stylesheet\" type=\"text/css\" href=\"../css/style.css\"/>
 \t\t<!-- CSS only -->
 \t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
-\t\t
-        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+
+\t\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
+\t\t<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
+\t\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
+\t\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com/%22%3E\">
+\t\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com/\" crossorigin>
+
+
 \t</head>
 \t<body>
 \t\t{% block body %}{% endblock %}

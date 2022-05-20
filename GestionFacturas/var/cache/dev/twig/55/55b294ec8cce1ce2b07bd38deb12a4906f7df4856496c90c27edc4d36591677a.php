@@ -25,15 +25,14 @@ class __TwigTemplate_15cfd52bdf830cf5c65f0f5702b5a1392772879a6e7ff680d1ace603b58
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
+            'contenido' => [$this, 'block_contenido'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "menu.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +44,7 @@ class __TwigTemplate_15cfd52bdf830cf5c65f0f5702b5a1392772879a6e7ff680d1ace603b58
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "cliente/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "cliente/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("menu.html.twig", "cliente/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -55,52 +54,52 @@ class __TwigTemplate_15cfd52bdf830cf5c65f0f5702b5a1392772879a6e7ff680d1ace603b58
 
     }
 
-    // line 3
-    public function block_title($context, array $blocks = [])
+    // line 4
+    public function block_contenido($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
 
-        echo "Edit Cliente";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        // line 5
+        echo "
 
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+\t<div class=\"container h-100 \">
+\t\t<div class=\"row h-100 justify-content-center aling-items-center\">
+\t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
-    }
+\t\t\t\t<h1 class=\"tituloLogin\">Editar Cliente
+\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/pedido\">
+\t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\"></i>
 
-    // line 5
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+\t\t\t\t\t</a>
+\t\t\t\t</h1>
 
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 6
-        echo "    <h1>Edit Cliente</h1>
-
-    ";
-        // line 8
+\t\t\t\t";
+        // line 18
         echo twig_include($this->env, $context, "cliente/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_index");
-        echo "\">back to list</a>
+                <br>
 
-    ";
-        // line 12
+\t\t\t\t";
+        // line 22
         echo twig_include($this->env, $context, "cliente/_delete_form.html.twig");
         echo "
+
+                \t<a href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_index");
+        echo "\">Back to list</a>
+
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,23 +121,41 @@ class __TwigTemplate_15cfd52bdf830cf5c65f0f5702b5a1392772879a6e7ff680d1ace603b58
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  95 => 24,  90 => 22,  83 => 18,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'menu.html.twig' %}
 
-{% block title %}Edit Cliente{% endblock %}
 
-{% block body %}
-    <h1>Edit Cliente</h1>
+{% block contenido %}
 
-    {{ include('cliente/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href=\"{{ path('app_cliente_index') }}\">back to list</a>
+\t<div class=\"container h-100 \">
+\t\t<div class=\"row h-100 justify-content-center aling-items-center\">
+\t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
-    {{ include('cliente/_delete_form.html.twig') }}
+\t\t\t\t<h1 class=\"tituloLogin\">Editar Cliente
+\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/pedido\">
+\t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\"></i>
+
+\t\t\t\t\t</a>
+\t\t\t\t</h1>
+
+\t\t\t\t{{ include('cliente/_form.html.twig', {'button_label': 'Update'}) }}
+
+                <br>
+
+\t\t\t\t{{ include('cliente/_delete_form.html.twig') }}
+
+                \t<a href=\"{{ path('app_cliente_index') }}\">Back to list</a>
+
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+
 {% endblock %}
 ", "cliente/edit.html.twig", "C:\\Users\\aleol\\Desktop\\Pedidos\\GestionFacturas\\templates\\cliente\\edit.html.twig");
     }
