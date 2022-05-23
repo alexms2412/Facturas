@@ -99,7 +99,7 @@ class __TwigTemplate_e09570d2167bdf5bb5a5ca8edee6b97c22cf923a0b23a90fc06a98673aa
 \t\t\t\t\t<th>Nombre</th>
 \t\t\t\t\t<th>Precio</th>
 \t\t\t\t\t<th>Descripcion</th>
-\t\t\t\t\t<th>actions</th>
+\t\t\t\t\t<th>Actions</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
@@ -144,7 +144,7 @@ class __TwigTemplate_e09570d2167bdf5bb5a5ca8edee6b97c22cf923a0b23a90fc06a98673aa
         if (!$context['_iterated']) {
             // line 52
             echo "\t\t\t\t\t<tr>
-\t\t\t\t\t\t<td colspan=\"5\">no records found</td>
+\t\t\t\t\t\t<td colspan=\"5\">No records found</td>
 \t\t\t\t\t</tr>
 \t\t\t\t";
         }
@@ -217,7 +217,7 @@ class __TwigTemplate_e09570d2167bdf5bb5a5ca8edee6b97c22cf923a0b23a90fc06a98673aa
 \t\t\t\t\t<th>Nombre</th>
 \t\t\t\t\t<th>Precio</th>
 \t\t\t\t\t<th>Descripcion</th>
-\t\t\t\t\t<th>actions</th>
+\t\t\t\t\t<th>Actions</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
@@ -234,7 +234,7 @@ class __TwigTemplate_e09570d2167bdf5bb5a5ca8edee6b97c22cf923a0b23a90fc06a98673aa
 \t\t\t\t\t</tr>
 \t\t\t\t{% else %}
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td colspan=\"5\">no records found</td>
+\t\t\t\t\t\t<td colspan=\"5\">No records found</td>
 \t\t\t\t\t</tr>
 \t\t\t\t{% endfor %}
 \t\t\t</tbody>

@@ -12,11 +12,11 @@ class DetalleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Cantidad')
-            ->add('precio')
-            ->add('pedido')
-            ->add('producto')
-        ;
+            
+        ->add('producto')
+        ->add('Cantidad')
+        ->add('precio')
+        ->add('pedido') ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

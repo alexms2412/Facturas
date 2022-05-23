@@ -1,0 +1,57 @@
+{% extends 'menu.html.twig' %}
+
+
+{% block contenido %}
+	
+    <h1 class="posionTituloShow"><i class="fa fa-building" aria-hidden="true"></i> Empresa</h1>
+
+	<table class="tableShow">
+		<tbody>
+
+			<tr>
+				<th>Username</th>
+				<td>{{ empresa.username }}</td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td>{{ empresa.password }}</td>
+			</tr>
+			<tr>
+				<th>Nombre Empresa</th>
+				<td>{{ empresa.nombreEmpresa }}</td>
+			</tr>
+			<tr>
+				<th>Correo Electronico</th>
+				<td>{{ empresa.correoElectronico }}</td>
+			</tr>
+			<tr>
+				<th>Codigo Postal</th>
+				<td>{{ empresa.codigoPostal }}</td>
+			</tr>
+			<tr>
+				<th>Direccion</th>
+				<td>{{ empresa.direccion }}</td>
+			</tr>
+			<tr>
+				<th>Telefono</th>
+				<td>{{ empresa.telefono }}</td>
+			</tr>
+			<tr>
+				<th>Dni</th>
+				<td>{{ empresa.dni }}</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+	<div class="posicionBotonesShow">
+
+		<a href="{{ path('app_empresa_edit', {'id': empresa.id}) }}">Editar /</a>
+
+		<a href="{{ path('app_empresa_index') }}">Back to list</a>
+
+	</div>
+
+
+{% endblock %}

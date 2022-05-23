@@ -106,7 +106,7 @@ class __TwigTemplate_fb681ae74cf7df109f441a599f1f0875353ec03de5929221312780f0377
 
 \t\t\t\t\t<th scope=\"col\">Telefono</th>
 
-\t\t\t\t\t<th scope=\"col\">actions</th>
+\t\t\t\t\t<th scope=\"col\">Actions</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
@@ -153,7 +153,7 @@ class __TwigTemplate_fb681ae74cf7df109f441a599f1f0875353ec03de5929221312780f0377
         if (!$context['_iterated']) {
             // line 61
             echo "\t\t\t\t\t<tr>
-\t\t\t\t\t\t<td colspan=\"7\">no records found</td>
+\t\t\t\t\t\t<td colspan=\"7\">No records found</td>
 \t\t\t\t\t</tr>
 \t\t\t\t";
         }
@@ -232,7 +232,7 @@ class __TwigTemplate_fb681ae74cf7df109f441a599f1f0875353ec03de5929221312780f0377
 
 \t\t\t\t\t<th scope=\"col\">Telefono</th>
 
-\t\t\t\t\t<th scope=\"col\">actions</th>
+\t\t\t\t\t<th scope=\"col\">Actions</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
@@ -251,7 +251,7 @@ class __TwigTemplate_fb681ae74cf7df109f441a599f1f0875353ec03de5929221312780f0377
 \t\t\t\t\t</tr>
 \t\t\t\t{% else %}
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td colspan=\"7\">no records found</td>
+\t\t\t\t\t\t<td colspan=\"7\">No records found</td>
 \t\t\t\t\t</tr>
 \t\t\t\t{% endfor %}
 \t\t\t</tbody>

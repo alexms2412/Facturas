@@ -87,7 +87,7 @@ class __TwigTemplate_05bbd1876db174ddf2bc98b228e7f63725e3906154fd0173292b3d231d0
 \t\t\t\t<a href=\"";
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_producto_index");
-        echo "\">back to list</a>
+        echo "\">Back to list</a>
 
 \t\t\t</div>
 \t\t</div>
@@ -140,7 +140,7 @@ class __TwigTemplate_05bbd1876db174ddf2bc98b228e7f63725e3906154fd0173292b3d231d0
 
 \t\t\t\t<br>
 
-\t\t\t\t<a href=\"{{ path('app_producto_index') }}\">back to list</a>
+\t\t\t\t<a href=\"{{ path('app_producto_index') }}\">Back to list</a>
 
 \t\t\t</div>
 \t\t</div>

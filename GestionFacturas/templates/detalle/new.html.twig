@@ -1,11 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
 
-{% block title %}New Detalle{% endblock %}
 
-{% block body %}
-    <h1>Create new Detalle</h1>
+{% block contenido %}
 
-    {{ include('detalle/_form.html.twig') }}
+    <div class="container h-100 ">
+		<div class="row h-100 justify-content-center aling-items-center">
+			<div class="col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5">
 
-    <a href="{{ path('app_detalle_index') }}">back to list</a>
+				<h1 class="tituloLogin">Añadir detalle </h1>
+
+				{{ include('detalle/_form.html.twig') }}
+
+		
+				<br>
+
+				<a href="{{ path('app_pedido_index') }}">Back to list</a>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 {% endblock %}

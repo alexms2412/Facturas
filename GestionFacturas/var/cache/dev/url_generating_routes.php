@@ -25,7 +25,11 @@ return [
     'app_detalle_show' => [['id'], ['_controller' => 'App\\Controller\\DetalleController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/detalle']], [], [], []],
     'app_detalle_edit' => [['id'], ['_controller' => 'App\\Controller\\DetalleController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/detalle']], [], [], []],
     'app_detalle_delete' => [['id'], ['_controller' => 'App\\Controller\\DetalleController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/detalle']], [], [], []],
-    'app_empresa' => [[], ['_controller' => 'App\\Controller\\EmpresaController::index'], [], [['text', '/empresa']], [], [], []],
+    'app_empresa_index' => [[], ['_controller' => 'App\\Controller\\EmpresaController::index'], [], [['text', '/empresa/']], [], [], []],
+    'app_empresa_new' => [[], ['_controller' => 'App\\Controller\\EmpresaController::new'], [], [['text', '/empresa/new']], [], [], []],
+    'app_empresa_show' => [['id'], ['_controller' => 'App\\Controller\\EmpresaController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/empresa']], [], [], []],
+    'app_empresa_edit' => [['id'], ['_controller' => 'App\\Controller\\EmpresaController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/empresa']], [], [], []],
+    'app_empresa_delete' => [['id'], ['_controller' => 'App\\Controller\\EmpresaController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/empresa']], [], [], []],
     'app_pedido_index' => [[], ['_controller' => 'App\\Controller\\PedidoController::index'], [], [['text', '/pedido/']], [], [], []],
     'app_pedido_facturas' => [[], ['_controller' => 'App\\Controller\\PedidoController::facturas'], [], [['text', '/pedido/facturas']], [], [], []],
     'app_pedido_new' => [[], ['_controller' => 'App\\Controller\\PedidoController::new'], [], [['text', '/pedido/new']], [], [], []],
@@ -40,4 +44,5 @@ return [
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
+    'logout' => [[], [], [], [['text', '/logout']], [], [], []],
 ];

@@ -1,111 +1,227 @@
-.tablePedidos {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 98%;
-    margin: auto;
-    text-align: center;
-    margin-top: 100px;
-}
-
-.tablePedidos td,
-.tablePedidos th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.tablePedidos tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.tablePedidos tr:hover {
-    background-color: #ddd;
-}
-
-.tablePedidos th {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    text-align: left;
-}
-
-.botonpedido {
-    border-left: black 2px solid;
-    border-right: black 2px solid;
-    border-top: black 2px solid;
-    margin-right: 0px;
-    margin-left: 28px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 5px;
-    float: left;
-    margin-top: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    color: black;
-}
-
-.botonesindex {
-    background-color: #3091e0;
-    color: white;
-    border-color: #3091e0;
-}
-
-.hrposicion {
-    float: left;
-}
-
-ul.pagination {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-}
-
-ul.pagination li {
-    display: inline;
-}
-
-ul.pagination li a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-ul.pagination li a.active {
-    background-color: #3091e0;
-    color: white;
-}
-
-ul.pagination li a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-.posicionpaginado {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.tamanioicono {
-    font-size: 30%;
-}
-
-.titulo {
-    font-size: 30px;
-    margin-top: -5px;
-    margin-right: 30px;
-}
-
-.nav-link {
-    color: #3091e0;
-}
-
-.tituloLogin {
-    text-align: center;
-    padding-bottom: 40px;
-    font-family: sans-serif;
-}
-
-.tituloLoginBotonCerrar {
-    font-family: sans-serif;
-    margin-left: 10px;
-}
+    .tablePedidos {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 98%;
+        margin: auto;
+        text-align: center;
+        margin-top: 100px;
+    }
+    
+    .tablePedidos td,
+    .tablePedidos th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    .tablePedidos tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .tablePedidos tr:hover {
+        background-color: #ddd;
+    }
+    
+    .tablePedidos th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+    }
+    
+    .botonpedido {
+        border-left: black 2px solid;
+        border-right: black 2px solid;
+        border-top: black 2px solid;
+        margin-right: 0px;
+        margin-left: 28px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 5px;
+        float: left;
+        margin-top: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: black;
+    }
+    
+    .botonesindex {
+        background-color: #3091e0;
+        color: white;
+        border-color: #3091e0;
+    }
+    
+    .hrposicion {
+        float: left;
+    }
+    
+    ul.pagination {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+    
+    ul.pagination li {
+        display: inline;
+    }
+    
+    ul.pagination li a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+    
+    ul.pagination li a.active {
+        background-color: #3091e0;
+        color: white;
+    }
+    
+    ul.pagination li a:hover:not(.active) {
+        background-color: #ddd;
+    }
+    
+    .posicionpaginado {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tamanioicono {
+        font-size: 30%;
+    }
+    
+    .titulo {
+        font-size: 30px;
+        margin-top: -5px;
+        margin-right: 30px;
+    }
+    
+    .nav-link {
+        color: #3091e0;
+    }
+    
+    .tituloLogin {
+        text-align: center;
+        padding-bottom: 40px;
+        font-family: sans-serif;
+    }
+    
+    .tituloLoginBotonCerrar {
+        font-family: sans-serif;
+        margin-left: 10px;
+    }
+    
+    .tableShow {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 98%;
+        margin: auto;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .tableShow td,
+    .tableShow th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    .tableShow tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .tableShow tr:hover {
+        background-color: #ddd;
+    }
+    
+    .tableShow th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+    }
+    
+    .posicionBotonesShow {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    
+    .posionTituloShow {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    
+    .posicionDatosFactura {
+        margin-top: 3%;
+        padding-top: 70px;
+        margin-left: 82%;
+    }
+    
+    .clienteFactura {
+        float: left;
+    }
+    
+    .container {
+        background-color: rgb(202, 215, 226);
+        margin-top: 40px
+    }
+    
+    .nombreEmpresaFactura {
+        padding-top: 60px;
+        padding-left: 70px;
+        float: left;
+    }
+    
+    .posicionDatosEmpresa {
+        margin-left: 70px;
+        margin-top: 40px;
+        float: left;
+    }
+    
+    .clienteFactura {
+        margin-top: 40px;
+        margin-left: 30%;
+    }
+    
+    .posicionPrecioTotal {
+        margin-left: 74%;
+        margin-top: 40px;
+    }
+    
+    .firmaHr {
+        padding-bottom: 110px;
+        width: 35%;
+        margin-top: 10px;
+        border-top: 2px solid rgb(26, 25, 25);
+        margin-left: 59%;
+    }
+    
+    .firma {
+        padding-bottom: 0px;
+        width: 35%;
+        margin-top: 200px;
+        margin-left: 59%;
+    }
+    
+    .tablaVer {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 89%;
+        margin: auto;
+        text-align: center;
+        margin-top: 280px;
+    }
+    
+    .tablaVer td,
+    .tablaVer th {
+        border: 1px solid rgb(2, 2, 2);
+        padding: 8px;
+    }
+    
+    .tablaVer tr:hover {
+        background-color: rgb(137, 162, 216);
+    }
+    
+    .tablaVer th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+    }

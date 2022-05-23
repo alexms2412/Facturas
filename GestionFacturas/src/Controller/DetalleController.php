@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[Route('/detalle')]
 class DetalleController extends AbstractController
@@ -23,8 +24,10 @@ class DetalleController extends AbstractController
     }
 
     #[Route('/new', name: 'app_detalle_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, DetalleRepository $detalleRepository, PedidoRepository $pedidoRepository): Response
+    public function new(Request $request, DetalleRepository $detalleRepository, PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
+
+
         $detalle = new Detalle();
         $form = $this->createForm(DetalleType::class, $detalle);
         $form->handleRequest($request);
@@ -34,8 +37,13 @@ class DetalleController extends AbstractController
             return $this->redirectToRoute('app_detalle_index', [], Response::HTTP_SEE_OTHER);
         }
 
+
         return $this->renderForm('detalle/new.html.twig', [
-            'pedido' => $pedidoRepository -> end(),
+            'pedido' => $pedidoRepository->findOneBy(
+
+                array('id' => 'DESC')
+            ),
+
             'detalle' => $detalle,
             'form' => $form,
         ]);
@@ -69,7 +77,7 @@ class DetalleController extends AbstractController
     #[Route('/{id}', name: 'app_detalle_delete', methods: ['POST'])]
     public function delete(Request $request, Detalle $detalle, DetalleRepository $detalleRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$detalle->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $detalle->getId(), $request->request->get('_token'))) {
             $detalleRepository->remove($detalle);
         }
 

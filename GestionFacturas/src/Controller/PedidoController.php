@@ -13,6 +13,7 @@ use App\Entity\Detalle;
 use App\Form\DetalleType;
 use App\Repository\DetalleRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
+use App\Repository\EmpresaRepository;
 
 
 #[Route('/pedido')]
@@ -27,8 +28,13 @@ class PedidoController extends AbstractController
             'pedidos' => $pedidoRepository->findBy(['empresa' => $empresa->getId()]),
             
         ]);
+
+        
+
     }
 
+ 
+    
     #[Route('/facturas', name: 'app_pedido_facturas', methods: ['GET'])]
     public function facturas(PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
@@ -64,10 +70,11 @@ class PedidoController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_pedido_show', methods: ['GET'])]
-    public function show(Pedido $pedido): Response
+    public function show(Pedido $pedido, DetalleRepository $detalleRepository): Response
     {
         return $this->render('pedido/show.html.twig', [
             'pedido' => $pedido,
+            'detalles' => $detalleRepository->findAll(),
         ]);
     }
 

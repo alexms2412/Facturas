@@ -22,7 +22,7 @@ class ClienteController extends AbstractController
 
         return $this->render('cliente/index.html.twig', [
             'clientes' => $clienteRepository->findBy(['empresa' => $empresa->getId()]),
-            
+           
         ]);
 
         

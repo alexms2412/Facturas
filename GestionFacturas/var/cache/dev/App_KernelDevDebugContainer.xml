@@ -20,6 +20,7 @@
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="TwigExtraBundle">Twig\Extra\TwigExtraBundle\TwigExtraBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -65,6 +66,10 @@
       <parameter key="TwigExtraBundle" type="collection">
         <parameter key="path">C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\twig\extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -236,6 +241,11 @@
       <parameter>dev</parameter>
       <parameter>main</parameter>
     </parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
@@ -384,6 +394,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\DetalleType" class="App\Form\DetalleType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EmpresaType" class="App\Form\EmpresaType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\PedidoType" class="App\Form\PedidoType" autowire="true" autoconfigure="true">
@@ -1052,6 +1065,7 @@
       <argument type="collection">
         <argument>App\Form\ClienteType</argument>
         <argument>App\Form\DetalleType</argument>
+        <argument>App\Form\EmpresaType</argument>
         <argument>App\Form\PedidoType</argument>
         <argument>App\Form\ProductoType</argument>
         <argument>App\Form\RegistrationFormType</argument>
@@ -1497,6 +1511,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1512,6 +1527,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1527,6 +1543,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1535,11 +1552,13 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1550,11 +1569,13 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1565,21 +1586,25 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1595,11 +1620,13 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -1610,16 +1637,19 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
@@ -1630,6 +1660,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -1655,6 +1686,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -1665,11 +1697,13 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
@@ -1680,16 +1714,19 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -1720,6 +1757,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
@@ -1735,11 +1773,13 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="uz" type="collection">
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
@@ -1761,11 +1801,18 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
           </argument>
+          <argument key="ky" type="collection">
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations</argument>
           <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations</argument>
           <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations</argument>
           <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas/translations</argument>
           <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\sensio\framework-extra-bundle\src/translations</argument>
@@ -1784,6 +1831,7 @@
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\validator/Resources/translations</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\form/Resources/translations</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\sensio\framework-extra-bundle\src/translations</argument>
@@ -2065,6 +2113,14 @@
         <argument type="collection">
           <argument type="service_closure" id="security.context_listener.0"/>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -2491,6 +2547,46 @@
           <argument>onKernelFinishRequest</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -3040,7 +3136,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.K4zgruV"/>
+      <argument type="service" id=".service_locator.dbuTlxK"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3684,6 +3780,9 @@
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3782,6 +3881,14 @@
       <call method="addPath">
         <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas/templates</argument>
@@ -4222,9 +4329,6 @@
     <service id="maker.entity_class_generator" class="Symfony\Bundle\MakerBundle\Doctrine\EntityClassGenerator">
       <argument type="service" id="maker.generator"/>
       <argument type="service" id="maker.doctrine_helper"/>
-      <call method="setMangerRegistryClassName">
-        <argument>Doctrine\Persistence\ManagerRegistry</argument>
-      </call>
     </service>
     <service id="maker.user_class_builder" class="Symfony\Bundle\MakerBundle\Security\UserClassBuilder"/>
     <service id="maker.security_config_updater" class="Symfony\Bundle\MakerBundle\Security\SecurityConfigUpdater"/>
@@ -4250,10 +4354,11 @@
     </service>
     <service id="maker.maker.make_command" class="Symfony\Bundle\MakerBundle\Maker\MakeCommand">
       <tag name="maker.command"/>
+      <argument type="service" id="maker.php_compat_util"/>
     </service>
     <service id="maker.maker.make_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeController">
       <tag name="maker.command"/>
-      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.php_compat_util"/>
     </service>
     <service id="maker.maker.make_crud" class="Symfony\Bundle\MakerBundle\Maker\MakeCrud">
       <tag name="maker.command"/>
@@ -4268,9 +4373,10 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
-      <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas</argument>
+      <argument>null</argument>
       <argument type="service" id="maker.generator"/>
       <argument type="service" id="maker.entity_class_generator"/>
+      <argument type="service" id="maker.php_compat_util"/>
     </service>
     <service id="maker.maker.make_fixtures" class="Symfony\Bundle\MakerBundle\Maker\MakeFixtures">
       <tag name="maker.command"/>
@@ -4341,6 +4447,9 @@
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
       <argument>C:\Users\aleol\Desktop\Pedidos\GestionFacturas</argument>
+    </service>
+    <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
+      <tag name="maker.command"/>
     </service>
     <service id="doctrine.dbal.logger.chain" class="Doctrine\DBAL\Logging\LoggerChain">
       <argument type="collection">
@@ -5508,7 +5617,7 @@
     <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>/</argument>
+      <argument>/login</argument>
     </service>
     <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
@@ -5579,6 +5688,52 @@
       </call>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor"/>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ClienteController" class="App\Controller\ClienteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ClienteController" class="App\Controller\ClienteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ClienteController" class="App\Controller\ClienteController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5604,6 +5759,8 @@
     <service id=".abstract.instanceof.App\Form\ClienteType" class="App\Form\ClienteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DetalleType" class="App\Form\DetalleType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\DetalleType" class="App\Form\DetalleType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EmpresaType" class="App\Form\EmpresaType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EmpresaType" class="App\Form\EmpresaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PedidoType" class="App\Form\PedidoType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PedidoType" class="App\Form\PedidoType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProductoType" class="App\Form\ProductoType" autowire="true" abstract="true"/>
@@ -5923,6 +6080,19 @@
         <argument>Creates a new migration based on database changes</argument>
       </call>
     </service>
+    <service id="maker.auto_command.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
+      <tag name="console.command" command="make:stimulus-controller" description="Creates a new Stimulus controller"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="maker.maker.make_stimulus_controller"/>
+      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.generator"/>
+      <call method="setName">
+        <argument>make:stimulus-controller</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Creates a new Stimulus controller</argument>
+      </call>
+    </service>
     <service id=".service_locator.KfwZsne" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5961,10 +6131,11 @@
         <argument key="detalleRepository" type="service_closure" id="App\Repository\DetalleRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.g8GD.uL" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.er9vHzz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="detalleRepository" type="service_closure" id="App\Repository\DetalleRepository"/>
+        <argument key="empresa" type="service_closure" id=".errored..service_locator.er9vHzz.Symfony\Component\Security\Core\User\UserInterface"/>
         <argument key="pedidoRepository" type="service_closure" id="App\Repository\PedidoRepository"/>
       </argument>
     </service>
@@ -5979,6 +6150,32 @@
       <argument type="collection">
         <argument key="detalle" type="service_closure" id=".errored..service_locator.ieyI6te.App\Entity\Detalle"/>
         <argument key="detalleRepository" type="service_closure" id="App\Repository\DetalleRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Bi_wSRO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="emp" type="service_closure" id=".errored..service_locator.Bi_wSRO.Symfony\Component\Security\Core\User\UserInterface"/>
+        <argument key="empresaRepository" type="service_closure" id="App\Repository\EmpresaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZumzI2X" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="empresaRepository" type="service_closure" id="App\Repository\EmpresaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.f9r8_yo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="empresa" type="service_closure" id=".errored..service_locator.f9r8_yo.App\Entity\Empresa"/>
+      </argument>
+    </service>
+    <service id=".service_locator.mT1e0jA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="empresa" type="service_closure" id=".errored..service_locator.mT1e0jA.App\Entity\Empresa"/>
+        <argument key="empresaRepository" type="service_closure" id="App\Repository\EmpresaRepository"/>
       </argument>
     </service>
     <service id=".service_locator.K2780Ku" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5996,10 +6193,11 @@
         <argument key="pedidoRepository" type="service_closure" id="App\Repository\PedidoRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.AOEYXy4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.xHkoRuK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="pedido" type="service_closure" id=".errored..service_locator.AOEYXy4.App\Entity\Pedido"/>
+        <argument key="detalleRepository" type="service_closure" id="App\Repository\DetalleRepository"/>
+        <argument key="pedido" type="service_closure" id=".errored..service_locator.xHkoRuK.App\Entity\Pedido"/>
       </argument>
     </service>
     <service id=".service_locator.EnTD9ox" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6044,7 +6242,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.CjjfvWl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Yzvfayk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ClienteController::delete" type="service_closure" id=".service_locator.8Qyp059"/>
@@ -6055,14 +6253,19 @@
         <argument key="App\Controller\DetalleController::delete" type="service_closure" id=".service_locator.ieyI6te"/>
         <argument key="App\Controller\DetalleController::edit" type="service_closure" id=".service_locator.ieyI6te"/>
         <argument key="App\Controller\DetalleController::index" type="service_closure" id=".service_locator.8csE_d_"/>
-        <argument key="App\Controller\DetalleController::new" type="service_closure" id=".service_locator.g8GD.uL"/>
+        <argument key="App\Controller\DetalleController::new" type="service_closure" id=".service_locator.er9vHzz"/>
         <argument key="App\Controller\DetalleController::show" type="service_closure" id=".service_locator.Mp5BfDI"/>
+        <argument key="App\Controller\EmpresaController::delete" type="service_closure" id=".service_locator.mT1e0jA"/>
+        <argument key="App\Controller\EmpresaController::edit" type="service_closure" id=".service_locator.mT1e0jA"/>
+        <argument key="App\Controller\EmpresaController::index" type="service_closure" id=".service_locator.Bi_wSRO"/>
+        <argument key="App\Controller\EmpresaController::new" type="service_closure" id=".service_locator.ZumzI2X"/>
+        <argument key="App\Controller\EmpresaController::show" type="service_closure" id=".service_locator.f9r8_yo"/>
         <argument key="App\Controller\PedidoController::delete" type="service_closure" id=".service_locator.EnTD9ox"/>
         <argument key="App\Controller\PedidoController::edit" type="service_closure" id=".service_locator.EnTD9ox"/>
         <argument key="App\Controller\PedidoController::facturas" type="service_closure" id=".service_locator.K2780Ku"/>
         <argument key="App\Controller\PedidoController::index" type="service_closure" id=".service_locator.K2780Ku"/>
         <argument key="App\Controller\PedidoController::new" type="service_closure" id=".service_locator.IvF_3hN"/>
-        <argument key="App\Controller\PedidoController::show" type="service_closure" id=".service_locator.AOEYXy4"/>
+        <argument key="App\Controller\PedidoController::show" type="service_closure" id=".service_locator.xHkoRuK"/>
         <argument key="App\Controller\ProductoController::delete" type="service_closure" id=".service_locator.fU4aPQq"/>
         <argument key="App\Controller\ProductoController::edit" type="service_closure" id=".service_locator.fU4aPQq"/>
         <argument key="App\Controller\ProductoController::index" type="service_closure" id=".service_locator.4sssAUr"/>
@@ -6084,14 +6287,19 @@
         <argument key="App\Controller\DetalleController:delete" type="service_closure" id=".service_locator.ieyI6te"/>
         <argument key="App\Controller\DetalleController:edit" type="service_closure" id=".service_locator.ieyI6te"/>
         <argument key="App\Controller\DetalleController:index" type="service_closure" id=".service_locator.8csE_d_"/>
-        <argument key="App\Controller\DetalleController:new" type="service_closure" id=".service_locator.g8GD.uL"/>
+        <argument key="App\Controller\DetalleController:new" type="service_closure" id=".service_locator.er9vHzz"/>
         <argument key="App\Controller\DetalleController:show" type="service_closure" id=".service_locator.Mp5BfDI"/>
+        <argument key="App\Controller\EmpresaController:delete" type="service_closure" id=".service_locator.mT1e0jA"/>
+        <argument key="App\Controller\EmpresaController:edit" type="service_closure" id=".service_locator.mT1e0jA"/>
+        <argument key="App\Controller\EmpresaController:index" type="service_closure" id=".service_locator.Bi_wSRO"/>
+        <argument key="App\Controller\EmpresaController:new" type="service_closure" id=".service_locator.ZumzI2X"/>
+        <argument key="App\Controller\EmpresaController:show" type="service_closure" id=".service_locator.f9r8_yo"/>
         <argument key="App\Controller\PedidoController:delete" type="service_closure" id=".service_locator.EnTD9ox"/>
         <argument key="App\Controller\PedidoController:edit" type="service_closure" id=".service_locator.EnTD9ox"/>
         <argument key="App\Controller\PedidoController:facturas" type="service_closure" id=".service_locator.K2780Ku"/>
         <argument key="App\Controller\PedidoController:index" type="service_closure" id=".service_locator.K2780Ku"/>
         <argument key="App\Controller\PedidoController:new" type="service_closure" id=".service_locator.IvF_3hN"/>
-        <argument key="App\Controller\PedidoController:show" type="service_closure" id=".service_locator.AOEYXy4"/>
+        <argument key="App\Controller\PedidoController:show" type="service_closure" id=".service_locator.xHkoRuK"/>
         <argument key="App\Controller\ProductoController:delete" type="service_closure" id=".service_locator.fU4aPQq"/>
         <argument key="App\Controller\ProductoController:edit" type="service_closure" id=".service_locator.fU4aPQq"/>
         <argument key="App\Controller\ProductoController:index" type="service_closure" id=".service_locator.4sssAUr"/>
@@ -6163,11 +6371,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.K4zgruV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dbuTlxK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ClienteType" type="service_closure" id="App\Form\ClienteType"/>
         <argument key="App\Form\DetalleType" type="service_closure" id="App\Form\DetalleType"/>
+        <argument key="App\Form\EmpresaType" type="service_closure" id="App\Form\EmpresaType"/>
         <argument key="App\Form\PedidoType" type="service_closure" id="App\Form\PedidoType"/>
         <argument key="App\Form\ProductoType" type="service_closure" id="App\Form\ProductoType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
@@ -6659,12 +6868,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.CjjfvWl"/>
+      <argument type="service" id=".service_locator.Yzvfayk"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.CjjfvWl"/>
+      <argument type="service" id=".service_locator.Yzvfayk"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6685,11 +6894,15 @@
     <service id=".errored..service_locator.oXNKN64.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.HCoah5z.App\Entity\Cliente" class="App\Entity\Cliente"/>
     <service id=".errored..service_locator.8Qyp059.App\Entity\Cliente" class="App\Entity\Cliente"/>
+    <service id=".errored..service_locator.er9vHzz.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.Mp5BfDI.App\Entity\Detalle" class="App\Entity\Detalle"/>
     <service id=".errored..service_locator.ieyI6te.App\Entity\Detalle" class="App\Entity\Detalle"/>
+    <service id=".errored..service_locator.Bi_wSRO.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
+    <service id=".errored..service_locator.f9r8_yo.App\Entity\Empresa" class="App\Entity\Empresa"/>
+    <service id=".errored..service_locator.mT1e0jA.App\Entity\Empresa" class="App\Entity\Empresa"/>
     <service id=".errored..service_locator.K2780Ku.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.IvF_3hN.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
-    <service id=".errored..service_locator.AOEYXy4.App\Entity\Pedido" class="App\Entity\Pedido"/>
+    <service id=".errored..service_locator.xHkoRuK.App\Entity\Pedido" class="App\Entity\Pedido"/>
     <service id=".errored..service_locator.EnTD9ox.App\Entity\Pedido" class="App\Entity\Pedido"/>
     <service id=".errored..service_locator.4sssAUr.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
     <service id=".errored..service_locator.1jRuMKL.App\Entity\Producto" class="App\Entity\Producto"/>
@@ -7103,9 +7316,16 @@
       <argument>false</argument>
       <argument type="service_closure" id="maker.auto_command.make_migration"/>
     </service>
+    <service id=".maker.auto_command.make_stimulus_controller.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>make:stimulus-controller</argument>
+      <argument type="collection"/>
+      <argument>Creates a new Stimulus controller</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="maker.auto_command.make_stimulus_controller"/>
+    </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.ka_Gv6M"/>
+      <argument type="service" id=".service_locator.F7AIELX"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -7199,9 +7419,10 @@
         <argument key="make:voter">maker.auto_command.make_voter</argument>
         <argument key="make:user">maker.auto_command.make_user</argument>
         <argument key="make:migration">maker.auto_command.make_migration</argument>
+        <argument key="make:stimulus-controller">maker.auto_command.make_stimulus_controller</argument>
       </argument>
     </service>
-    <service id=".service_locator.ka_Gv6M" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.F7AIELX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -7294,6 +7515,7 @@
         <argument key="maker.auto_command.make_voter" type="service_closure" id=".maker.auto_command.make_voter.lazy"/>
         <argument key="maker.auto_command.make_user" type="service_closure" id=".maker.auto_command.make_user.lazy"/>
         <argument key="maker.auto_command.make_migration" type="service_closure" id=".maker.auto_command.make_migration.lazy"/>
+        <argument key="maker.auto_command.make_stimulus_controller" type="service_closure" id=".maker.auto_command.make_stimulus_controller.lazy"/>
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
@@ -7501,9 +7723,10 @@
     <service id="security.user_checker.main" alias="security.user_checker"/>
     <service id="security.firewall.context_locator" alias=".service_locator.zJyh7qS"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.CjjfvWl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Yzvfayk"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
@@ -7521,13 +7744,15 @@
     <service id="Psr\Log\LoggerInterface $deprecationLogger" alias="monolog.logger.deprecation"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.KwQ9cNT" alias=".service_locator.K2780Ku"/>
     <service id=".service_locator.G0Y1LuW" alias=".service_locator.IvF_3hN"/>
+    <service id=".service_locator.1RVkHZg" alias=".service_locator.Bi_wSRO"/>
+    <service id=".service_locator.KwQ9cNT" alias=".service_locator.K2780Ku"/>
+    <service id=".service_locator.nYC5f2I" alias=".service_locator.xHkoRuK"/>
     <service id=".service_locator..D371uT" alias=".service_locator.4sssAUr"/>
     <service id=".service_locator.UH5hWpp" alias=".service_locator.7hOlDLP"/>
-    <service id=".service_locator.ZseBhEy" alias=".service_locator.CjjfvWl"/>
+    <service id=".service_locator.lDHXQuW" alias=".service_locator.Yzvfayk"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.EbSK2Yf" alias=".service_locator.K4zgruV"/>
+    <service id=".service_locator.Pt.lLDH" alias=".service_locator.dbuTlxK"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jkb6XQV" alias=".service_locator.l1ae.Qz"/>
@@ -7557,12 +7782,16 @@
     <service id=".service_locator.f7HAbfg" alias=".service_locator.HCoah5z"/>
     <service id=".service_locator.aAwFOz5" alias=".service_locator.8Qyp059"/>
     <service id=".service_locator.4a5RfXu" alias=".service_locator.8csE_d_"/>
-    <service id=".service_locator.q4675cP" alias=".service_locator.g8GD.uL"/>
+    <service id=".service_locator._nZ9QJF" alias=".service_locator.er9vHzz"/>
     <service id=".service_locator.JeNkJm6" alias=".service_locator.Mp5BfDI"/>
     <service id=".service_locator.Ijg5Ig." alias=".service_locator.ieyI6te"/>
+    <service id=".service_locator.rherNd2" alias=".service_locator.Bi_wSRO"/>
+    <service id=".service_locator.elSrdNv" alias=".service_locator.ZumzI2X"/>
+    <service id=".service_locator.5fZENCp" alias=".service_locator.f9r8_yo"/>
+    <service id=".service_locator.8M62Cfk" alias=".service_locator.mT1e0jA"/>
     <service id=".service_locator.DHtjM0a" alias=".service_locator.K2780Ku"/>
     <service id=".service_locator.H4AYfMR" alias=".service_locator.IvF_3hN"/>
-    <service id=".service_locator.mhwIETD" alias=".service_locator.AOEYXy4"/>
+    <service id=".service_locator.7QTrbKg" alias=".service_locator.xHkoRuK"/>
     <service id=".service_locator.cwmcmJ3" alias=".service_locator.EnTD9ox"/>
     <service id=".service_locator.7GZRyAF" alias=".service_locator.4sssAUr"/>
     <service id=".service_locator.vkemC09" alias=".service_locator.1jRuMKL"/>

@@ -37,7 +37,6 @@
 					<th scope="col">ID</th>
 					<th scope="col">Fecha</th>
 					<th scope="col">Nombre Factura</th>
-					<th scope="col">Estado</th>
 					<th scope="col">Cliente</th>
 					<th scope="col">Actions</th>
 
@@ -53,7 +52,6 @@
 							<td>{{ pedido.id }}</td>
 							<td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
 							<td>{{ pedido.nombrePedido }}</td>
-							<td>{{ pedido.estado ? 'Factura' : 'Presupuesto' }}</td>
 							<td>{{ pedido.Cliente}}
 							</td>
 							<td>
@@ -70,6 +68,11 @@
 						{% else %}
 
 					{% endif %}
+
+					{% else %}
+					<tr>
+						<td colspan="7">No records found</td>
+					</tr>
 
 				{% endfor %}
 			</tbody>

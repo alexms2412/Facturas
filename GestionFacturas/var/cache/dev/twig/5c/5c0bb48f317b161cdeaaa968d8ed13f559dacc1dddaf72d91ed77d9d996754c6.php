@@ -114,6 +114,7 @@ class __TwigTemplate_d984cf98ad1d2784e7fb4e1679ef5ee67191933ed2b9ae57d66558436c1
         // line 47
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 47, $this->source); })()));
+        $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["pedido"]) {
             // line 48
             echo "
@@ -164,12 +165,22 @@ class __TwigTemplate_d984cf98ad1d2784e7fb4e1679ef5ee67191933ed2b9ae57d66558436c1
             }
             // line 72
             echo "
+
+\t\t\t\t";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 75
+            echo "\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td colspan=\"7\">No records found</td>
+\t\t\t\t\t</tr>
+
 \t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pedido'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 74
+        // line 80
         echo "\t\t\t</tbody>
 \t\t</table>
 
@@ -227,7 +238,7 @@ class __TwigTemplate_d984cf98ad1d2784e7fb4e1679ef5ee67191933ed2b9ae57d66558436c1
 
     public function getDebugInfo()
     {
-        return array (  173 => 74,  166 => 72,  152 => 61,  147 => 59,  141 => 56,  136 => 54,  132 => 53,  128 => 52,  124 => 50,  122 => 49,  119 => 48,  115 => 47,  80 => 15,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  184 => 80,  174 => 75,  167 => 72,  153 => 61,  148 => 59,  142 => 56,  137 => 54,  133 => 53,  129 => 52,  125 => 50,  123 => 49,  120 => 48,  115 => 47,  80 => 15,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -303,6 +314,12 @@ class __TwigTemplate_d984cf98ad1d2784e7fb4e1679ef5ee67191933ed2b9ae57d66558436c1
 
 
 \t\t\t\t\t{% endif %}
+
+
+\t\t\t\t{% else %}
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td colspan=\"7\">No records found</td>
+\t\t\t\t\t</tr>
 
 \t\t\t\t{% endfor %}
 \t\t\t</tbody>

@@ -103,7 +103,6 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 \t\t\t\t\t<th scope=\"col\">ID</th>
 \t\t\t\t\t<th scope=\"col\">Fecha</th>
 \t\t\t\t\t<th scope=\"col\">Nombre Factura</th>
-\t\t\t\t\t<th scope=\"col\">Estado</th>
 \t\t\t\t\t<th scope=\"col\">Cliente</th>
 \t\t\t\t\t<th scope=\"col\">Actions</th>
 
@@ -111,45 +110,42 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 \t\t\t</thead>
 \t\t\t<tbody>
 \t\t\t\t";
-        // line 47
+        // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 47, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 46, $this->source); })()));
+        $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["pedido"]) {
-            // line 48
+            // line 47
             echo "
 \t\t\t\t\t";
-            // line 49
-            if ((twig_get_attribute($this->env, $this->source, $context["pedido"], "estado", [], "any", false, false, false, 49) == true)) {
-                // line 50
+            // line 48
+            if ((twig_get_attribute($this->env, $this->source, $context["pedido"], "estado", [], "any", false, false, false, 48) == true)) {
+                // line 49
                 echo "
 
 \t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t<td>";
+                // line 52
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 52), "html", null, true);
+                echo "</td>
+\t\t\t\t\t\t\t<td>";
                 // line 53
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 53), "html", null, true);
+                ((twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 53)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 53), "Y-m-d"), "html", null, true))) : (print ("")));
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
                 // line 54
-                ((twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 54)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 54), "Y-m-d"), "html", null, true))) : (print ("")));
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "nombrePedido", [], "any", false, false, false, 54), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
                 // line 55
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "nombrePedido", [], "any", false, false, false, 55), "html", null, true);
-                echo "</td>
-\t\t\t\t\t\t\t<td>";
-                // line 56
-                echo ((twig_get_attribute($this->env, $this->source, $context["pedido"], "estado", [], "any", false, false, false, 56)) ? ("Factura") : ("Presupuesto"));
-                echo "</td>
-\t\t\t\t\t\t\t<td>";
-                // line 57
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "Cliente", [], "any", false, false, false, 57), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "Cliente", [], "any", false, false, false, 55), "html", null, true);
                 echo "
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
 
 \t\t\t\t\t\t\t\t<a href=\"";
-                // line 61
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+                // line 59
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 59)]), "html", null, true);
                 echo "\">Ver / 
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<a href=\"/descargar\">
@@ -161,18 +157,27 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t\t";
             } else {
-                // line 71
+                // line 69
                 echo "
 \t\t\t\t\t";
             }
-            // line 73
+            // line 71
             echo "
+\t\t\t\t\t";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 73
+            echo "\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td colspan=\"7\">No records found</td>
+\t\t\t\t\t</tr>
+
 \t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pedido'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 78
         echo "\t\t\t</tbody>
 \t\t</table>
 
@@ -231,7 +236,7 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 
     public function getDebugInfo()
     {
-        return array (  176 => 75,  169 => 73,  165 => 71,  152 => 61,  145 => 57,  141 => 56,  137 => 55,  133 => 54,  129 => 53,  124 => 50,  122 => 49,  119 => 48,  115 => 47,  79 => 14,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  181 => 78,  171 => 73,  165 => 71,  161 => 69,  148 => 59,  141 => 55,  137 => 54,  133 => 53,  129 => 52,  124 => 49,  122 => 48,  119 => 47,  114 => 46,  79 => 14,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -275,7 +280,6 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 \t\t\t\t\t<th scope=\"col\">ID</th>
 \t\t\t\t\t<th scope=\"col\">Fecha</th>
 \t\t\t\t\t<th scope=\"col\">Nombre Factura</th>
-\t\t\t\t\t<th scope=\"col\">Estado</th>
 \t\t\t\t\t<th scope=\"col\">Cliente</th>
 \t\t\t\t\t<th scope=\"col\">Actions</th>
 
@@ -291,7 +295,6 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 \t\t\t\t\t\t\t<td>{{ pedido.id }}</td>
 \t\t\t\t\t\t\t<td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
 \t\t\t\t\t\t\t<td>{{ pedido.nombrePedido }}</td>
-\t\t\t\t\t\t\t<td>{{ pedido.estado ? 'Factura' : 'Presupuesto' }}</td>
 \t\t\t\t\t\t\t<td>{{ pedido.Cliente}}
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
@@ -308,6 +311,11 @@ class __TwigTemplate_4ace77664096b0fab0a0d660cabb3949bc8ceac9dab99883604e4b31798
 \t\t\t\t\t\t{% else %}
 
 \t\t\t\t\t{% endif %}
+
+\t\t\t\t\t{% else %}
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td colspan=\"7\">No records found</td>
+\t\t\t\t\t</tr>
 
 \t\t\t\t{% endfor %}
 \t\t\t</tbody>

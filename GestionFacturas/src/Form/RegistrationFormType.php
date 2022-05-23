@@ -19,10 +19,11 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nombreEmpresa')
             ->add('correoElectronico')
-            ->add('codigoPostal')
-            ->add('direccion')
-            ->add('telefono')
             ->add('dni')
+            ->add('direccion')
+            ->add('codigoPostal')
+            ->add('telefono')
+            
 
             ->add('username')
             ->add('agreeTerms', CheckboxType::class, [

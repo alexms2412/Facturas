@@ -33,7 +33,7 @@
 					<th>Nombre</th>
 					<th>Precio</th>
 					<th>Descripcion</th>
-					<th>actions</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,7 +41,7 @@
 					<tr>
 						<td>{{ producto.id }}</td>
 						<td>{{ producto.nombre }}</td>
-						<td>{{ producto.precio }}</td>
+						<td>{{ producto.precio }} €</td>
 						<td>{{ producto.descripcion }}</td>
 						<td>
 							<a href="{{ path('app_producto_show', {'id': producto.id}) }}">Ver / </a>
@@ -50,7 +50,7 @@
 					</tr>
 				{% else %}
 					<tr>
-						<td colspan="5">no records found</td>
+						<td colspan="5">No records found</td>
 					</tr>
 				{% endfor %}
 			</tbody>

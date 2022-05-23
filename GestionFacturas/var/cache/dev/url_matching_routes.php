@@ -17,7 +17,8 @@ return [
         '/cliente/new' => [[['_route' => 'app_cliente_new', '_controller' => 'App\\Controller\\ClienteController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/detalle' => [[['_route' => 'app_detalle_index', '_controller' => 'App\\Controller\\DetalleController::index'], null, ['GET' => 0], null, true, false, null]],
         '/detalle/new' => [[['_route' => 'app_detalle_new', '_controller' => 'App\\Controller\\DetalleController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/empresa' => [[['_route' => 'app_empresa', '_controller' => 'App\\Controller\\EmpresaController::index'], null, null, null, false, false, null]],
+        '/empresa' => [[['_route' => 'app_empresa_index', '_controller' => 'App\\Controller\\EmpresaController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/empresa/new' => [[['_route' => 'app_empresa_new', '_controller' => 'App\\Controller\\EmpresaController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/pedido' => [[['_route' => 'app_pedido_index', '_controller' => 'App\\Controller\\PedidoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/pedido/facturas' => [[['_route' => 'app_pedido_facturas', '_controller' => 'App\\Controller\\PedidoController::facturas'], null, ['GET' => 0], null, false, false, null]],
         '/pedido/new' => [[['_route' => 'app_pedido_new', '_controller' => 'App\\Controller\\PedidoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -25,7 +26,10 @@ return [
         '/producto/new' => [[['_route' => 'app_producto_new', '_controller' => 'App\\Controller\\ProductoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
-        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/logout' => [
+            [['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null],
+            [['_route' => 'logout'], null, null, null, false, false, null],
+        ],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -54,16 +58,21 @@ return [
                     .'|/edit(*:252)'
                     .'|(*:260)'
                 .')'
+                .'|/empresa/([^/]++)(?'
+                    .'|(*:289)'
+                    .'|/edit(*:302)'
+                    .'|(*:310)'
+                .')'
                 .'|/p(?'
                     .'|edido/([^/]++)(?'
-                        .'|(*:291)'
-                        .'|/edit(*:304)'
-                        .'|(*:312)'
+                        .'|(*:341)'
+                        .'|/edit(*:354)'
+                        .'|(*:362)'
                     .')'
                     .'|roducto/([^/]++)(?'
-                        .'|(*:340)'
-                        .'|/edit(*:353)'
-                        .'|(*:361)'
+                        .'|(*:390)'
+                        .'|/edit(*:403)'
+                        .'|(*:411)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -82,12 +91,15 @@ return [
         239 => [[['_route' => 'app_detalle_show', '_controller' => 'App\\Controller\\DetalleController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         252 => [[['_route' => 'app_detalle_edit', '_controller' => 'App\\Controller\\DetalleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         260 => [[['_route' => 'app_detalle_delete', '_controller' => 'App\\Controller\\DetalleController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        291 => [[['_route' => 'app_pedido_show', '_controller' => 'App\\Controller\\PedidoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        304 => [[['_route' => 'app_pedido_edit', '_controller' => 'App\\Controller\\PedidoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        312 => [[['_route' => 'app_pedido_delete', '_controller' => 'App\\Controller\\PedidoController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        340 => [[['_route' => 'app_producto_show', '_controller' => 'App\\Controller\\ProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        353 => [[['_route' => 'app_producto_edit', '_controller' => 'App\\Controller\\ProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        361 => [
+        289 => [[['_route' => 'app_empresa_show', '_controller' => 'App\\Controller\\EmpresaController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        302 => [[['_route' => 'app_empresa_edit', '_controller' => 'App\\Controller\\EmpresaController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        310 => [[['_route' => 'app_empresa_delete', '_controller' => 'App\\Controller\\EmpresaController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        341 => [[['_route' => 'app_pedido_show', '_controller' => 'App\\Controller\\PedidoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        354 => [[['_route' => 'app_pedido_edit', '_controller' => 'App\\Controller\\PedidoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        362 => [[['_route' => 'app_pedido_delete', '_controller' => 'App\\Controller\\PedidoController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        390 => [[['_route' => 'app_producto_show', '_controller' => 'App\\Controller\\ProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        403 => [[['_route' => 'app_producto_edit', '_controller' => 'App\\Controller\\ProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        411 => [
             [['_route' => 'app_producto_delete', '_controller' => 'App\\Controller\\ProductoController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
