@@ -67,10 +67,10 @@ class Cliente extends \App\Entity\Cliente implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'apellidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'empresa'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'apellidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'empresa', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'codigoPostal', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'ciudad'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'apellidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'empresa'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'apellidos', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'empresa', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'codigoPostal', '' . "\0" . 'App\\Entity\\Cliente' . "\0" . 'ciudad'];
     }
 
     /**
@@ -388,6 +388,50 @@ class Cliente extends \App\Entity\Cliente implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmpresa', [$empresa]);
 
         return parent::setEmpresa($empresa);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCodigoPostal(): ?int
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCodigoPostal', []);
+
+        return parent::getCodigoPostal();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCodigoPostal(int $codigoPostal): \App\Entity\Cliente
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCodigoPostal', [$codigoPostal]);
+
+        return parent::setCodigoPostal($codigoPostal);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCiudad(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCiudad', []);
+
+        return parent::getCiudad();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCiudad(string $ciudad): \App\Entity\Cliente
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCiudad', [$ciudad]);
+
+        return parent::setCiudad($ciudad);
     }
 
 }

@@ -113,7 +113,7 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 \t\t\t\t";
         // line 47
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 47, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable(twig_reverse_filter($this->env, (isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 47, $this->source); })())));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["pedido"]) {
             // line 48
@@ -151,11 +151,9 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 \t\t\t\t\t\t\t\t<a href=\"";
                 // line 61
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 61)]), "html", null, true);
-                echo "\">Editar /  &nbsp;</a>
+                echo "\">Editar   &nbsp;</a>
 
-\t\t\t\t\t\t\t\t<a href=\"/descargar\">
-\t\t\t\t\t\t\t\t\t<i class=\"fa fa-download\" aria-hidden=\"true\"></i>
-\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t
 
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t</tr>
@@ -163,14 +161,14 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 
 \t\t\t\t\t";
             }
-            // line 72
+            // line 70
             echo "
 
 \t\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 75
+            // line 73
             echo "\t\t\t\t\t<tr>
 \t\t\t\t\t\t<td colspan=\"7\">No records found</td>
 \t\t\t\t\t</tr>
@@ -180,7 +178,7 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pedido'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 80
+        // line 78
         echo "\t\t\t</tbody>
 \t\t</table>
 
@@ -238,7 +236,7 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 
     public function getDebugInfo()
     {
-        return array (  184 => 80,  174 => 75,  167 => 72,  153 => 61,  148 => 59,  142 => 56,  137 => 54,  133 => 53,  129 => 52,  125 => 50,  123 => 49,  120 => 48,  115 => 47,  80 => 15,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  182 => 78,  172 => 73,  165 => 70,  153 => 61,  148 => 59,  142 => 56,  137 => 54,  133 => 53,  129 => 52,  125 => 50,  123 => 49,  120 => 48,  115 => 47,  80 => 15,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -289,7 +287,7 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
-\t\t\t\t{% for pedido in pedidos %}
+\t\t\t\t{% for pedido in pedidos |reverse %}
 
 \t\t\t\t\t{% if pedido.estado == false %}
 
@@ -303,11 +301,9 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 \t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_show', {'id': pedido.id}) }}\">Ver /
 \t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_edit', {'id': pedido.id}) }}\">Editar /  &nbsp;</a>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_edit', {'id': pedido.id}) }}\">Editar   &nbsp;</a>
 
-\t\t\t\t\t\t\t\t<a href=\"/descargar\">
-\t\t\t\t\t\t\t\t\t<i class=\"fa fa-download\" aria-hidden=\"true\"></i>
-\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t
 
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t</tr>

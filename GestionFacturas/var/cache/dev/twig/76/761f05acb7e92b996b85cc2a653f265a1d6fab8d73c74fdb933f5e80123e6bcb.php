@@ -66,31 +66,33 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
 
         // line 5
         echo "
-    <div class=\"container h-100 \">
+\t<div class=\"container h-100 \">
 \t\t<div class=\"row h-100 justify-content-center aling-items-center\">
 \t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
-\t\t\t\t<h1 class=\"tituloLogin\">Añadir detalle </h1>
+\t\t\t\t<h1 class=\"tituloLogin\">Añadir detalle
+\t\t\t\t</h1>
 
 \t\t\t\t";
-        // line 12
+        // line 13
         echo twig_include($this->env, $context, "detalle/_form.html.twig");
         echo "
 
-\t\t
-\t\t\t\t<br>
-
+\t\t\t\t<a href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_detalle_new");
+        echo "\"></a>
+\t\t\t
 \t\t\t\t<a href=\"";
         // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_index");
-        echo "\">Back to list</a>
+        echo "\">
+\t\t\t\t<br>
+\t\t\t\tVolver al listado</a>
 
 \t\t\t</div>
 \t\t</div>
 \t</div>
-
-
-
 
 
 ";
@@ -114,7 +116,7 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
 
     public function getDebugInfo()
     {
-        return array (  85 => 17,  77 => 12,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  88 => 17,  83 => 15,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -124,25 +126,24 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
 
 {% block contenido %}
 
-    <div class=\"container h-100 \">
+\t<div class=\"container h-100 \">
 \t\t<div class=\"row h-100 justify-content-center aling-items-center\">
 \t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
-\t\t\t\t<h1 class=\"tituloLogin\">Añadir detalle </h1>
+\t\t\t\t<h1 class=\"tituloLogin\">Añadir detalle
+\t\t\t\t</h1>
 
 \t\t\t\t{{ include('detalle/_form.html.twig') }}
 
-\t\t
+\t\t\t\t<a href=\"{{ path('app_detalle_new') }}\"></a>
+\t\t\t
+\t\t\t\t<a href=\"{{ path('app_pedido_index') }}\">
 \t\t\t\t<br>
-
-\t\t\t\t<a href=\"{{ path('app_pedido_index') }}\">Back to list</a>
+\t\t\t\tVolver al listado</a>
 
 \t\t\t</div>
 \t\t</div>
 \t</div>
-
-
-
 
 
 {% endblock %}

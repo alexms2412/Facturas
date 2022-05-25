@@ -1,13 +1,82 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
 
-{% block title %}Edit Pedido{% endblock %}
 
-{% block body %}
-    <h1>Edit Pedido</h1>
+{% block contenido %}
 
-    {{ include('pedido/_form.html.twig', {'button_label': 'Update'}) }}
+<br>
+<br>
 
-    <a href="{{ path('app_pedido_index') }}">back to list</a>
+	<div class="container containerPedido">
 
-    {{ include('pedido/_delete_form.html.twig') }}
-{% endblock %}
+		<div class="posicionAccionesShow">
+
+			<a href="{{ path('app_pedido_index') }}">Atras
+			</a>
+
+
+		</div>
+
+<br>
+
+		<div class="posicionDatosEmpresa">
+
+			<h1>Editando
+				{{ pedido.estado ? 'factura' : 'pedido' }}
+				ES-{{pedido.getId}}</h1>
+
+			{{ include('pedido/_form.html.twig', {'button_label': 'Actualizar'}) }}
+
+
+		</div>
+
+		<br>
+
+
+		<table class="table">
+			<thead>
+				<tr>
+
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Cantidad</th>
+					<th>Precio U.</th>
+					<th>Precio Total</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<a href="{{ path('app_detalle_new') }}">Añadir detalle</a>
+			<tbody>
+				{% for detalle in detalles %}
+					{% if  detalle.pedido.getId()   ==  pedido.id  %}
+					<tr>
+						<td>{{ detalle.producto.getNombre() }}</td>
+						<td>{{ detalle.producto.getDescripcion() }}</td>
+						<td>{{ detalle.Cantidad }}</td>
+						<td>{{ detalle.precio }}
+							€</td>
+						{% set preciototal = detalle.Cantidad *  detalle.precio  %}
+						<td>
+							{{preciototal}}
+							€</td>
+
+						<td>
+
+							<a href="{{ path('app_detalle_edit', {'id': detalle.id}) }}">Editar</a>
+						</td>
+						{% endif %}
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="4">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+
+	</tbody>
+</table>
+<div class="posicionAccionesShowDelete">
+	<br>
+	{{ include('pedido/_delete_form.html.twig') }}
+</div></div>{% endblock %}

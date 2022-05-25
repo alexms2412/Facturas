@@ -15,8 +15,7 @@ class DetalleType extends AbstractType
             
         ->add('producto')
         ->add('Cantidad')
-        ->add('precio')
-        ->add('pedido') ;
+        ->add('precio');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

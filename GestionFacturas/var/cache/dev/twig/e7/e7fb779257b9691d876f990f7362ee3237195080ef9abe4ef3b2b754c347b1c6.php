@@ -112,7 +112,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t\t";
         // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 46, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable(twig_reverse_filter($this->env, (isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 46, $this->source); })())));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["pedido"]) {
             // line 47
@@ -146,7 +146,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t\t\t\t\t\t<a href=\"";
                 // line 59
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 59)]), "html", null, true);
-                echo "\">Ver / 
+                echo "\">Ver /
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<a href=\"/descargar\">
 \t\t\t\t\t\t\t\t\t<i class=\"fa fa-download\" aria-hidden=\"true\"></i>
@@ -163,7 +163,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
             }
             // line 71
             echo "
-\t\t\t\t\t";
+\t\t\t\t";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
@@ -214,6 +214,14 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 
 \t\t</div>
 
+\t\t";
+        // line 114
+        $this->loadTemplate("pagination.html.twig", "pedido/indexFacturas.html.twig", 114)->display(twig_to_array(["currentFilters" => ["myFilter" =>         // line 115
+(isset($context["filtervariables"]) || array_key_exists("filtervariables", $context) ? $context["filtervariables"] : (function () { throw new RuntimeError('Variable "filtervariables" does not exist.', 115, $this->source); })())], "currentPage" =>         // line 116
+(isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 116, $this->source); })()), "paginationPath" => "myroute", "lastPage" =>         // line 118
+(isset($context["totalPages"]) || array_key_exists("totalPages", $context) ? $context["totalPages"] : (function () { throw new RuntimeError('Variable "totalPages" does not exist.', 118, $this->source); })()), "showAlwaysFirstAndLast" => true]));
+        // line 121
+        echo "
 
 \t";
         
@@ -236,7 +244,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 
     public function getDebugInfo()
     {
-        return array (  181 => 78,  171 => 73,  165 => 71,  161 => 69,  148 => 59,  141 => 55,  137 => 54,  133 => 53,  129 => 52,  124 => 49,  122 => 48,  119 => 47,  114 => 46,  79 => 14,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  224 => 121,  222 => 118,  221 => 116,  220 => 115,  219 => 114,  181 => 78,  171 => 73,  165 => 71,  161 => 69,  148 => 59,  141 => 55,  137 => 54,  133 => 53,  129 => 52,  124 => 49,  122 => 48,  119 => 47,  114 => 46,  79 => 14,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -286,7 +294,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
-\t\t\t\t{% for pedido in pedidos %}
+\t\t\t\t{% for pedido in pedidos |reverse%}
 
 \t\t\t\t\t{% if pedido.estado == true %}
 
@@ -299,7 +307,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
 
-\t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_show', {'id': pedido.id}) }}\">Ver / 
+\t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_show', {'id': pedido.id}) }}\">Ver /
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<a href=\"/descargar\">
 \t\t\t\t\t\t\t\t\t<i class=\"fa fa-download\" aria-hidden=\"true\"></i>
@@ -312,7 +320,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 
 \t\t\t\t\t{% endif %}
 
-\t\t\t\t\t{% else %}
+\t\t\t\t{% else %}
 \t\t\t\t\t<tr>
 \t\t\t\t\t\t<td colspan=\"7\">No records found</td>
 \t\t\t\t\t</tr>
@@ -353,6 +361,14 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t</ul>
 
 \t\t</div>
+
+\t\t{% include 'pagination.html.twig' with {
+\t\t\tcurrentFilters: { myFilter: filtervariables },
+\t\t\tcurrentPage: page,
+\t\t\tpaginationPath: \"myroute\",
+\t\t\tlastPage: totalPages,
+\t\t\tshowAlwaysFirstAndLast: true
+\t\t} only %}
 
 
 \t{% endblock %}

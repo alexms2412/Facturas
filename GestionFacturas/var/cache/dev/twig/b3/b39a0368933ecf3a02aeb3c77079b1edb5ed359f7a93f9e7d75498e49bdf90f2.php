@@ -100,17 +100,31 @@ class __TwigTemplate_c5c779c0c9bca6f391dad90a44af6b5012634cb95c7a05f0cb89d988b53
         echo "</td>
 \t\t\t</tr>
 \t\t\t<tr>
-\t\t\t\t<th>Telefono</th>
+\t\t\t\t<th>Ciudad</th>
 \t\t\t\t<td>";
         // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 29, $this->source); })()), "telefono", [], "any", false, false, false, 29), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 29, $this->source); })()), "ciudad", [], "any", false, false, false, 29), "html", null, true);
+        echo "</td>
+\t\t\t</tr>
+\t\t\t\t<tr>
+\t\t\t\t<th>Codigo postal</th>
+\t\t\t\t<td>";
+        // line 33
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 33, $this->source); })()), "getCodigoPostal", [], "any", false, false, false, 33), "html", null, true);
+        echo "</td>
+\t\t\t</tr>
+\t\t\t<tr>
+\t\t\t\t<th>Telefono</th>
+\t\t\t\t<td>";
+        // line 37
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 37, $this->source); })()), "telefono", [], "any", false, false, false, 37), "html", null, true);
         echo "</td>
 \t\t\t</tr>
 \t\t\t<tr>
 \t\t\t\t<th>CorreoElectronico</th>
 \t\t\t\t<td>";
-        // line 33
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 33, $this->source); })()), "correoElectronico", [], "any", false, false, false, 33), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 41, $this->source); })()), "correoElectronico", [], "any", false, false, false, 41), "html", null, true);
         echo "</td>
 \t\t\t</tr>
 \t\t</tbody>
@@ -120,12 +134,12 @@ class __TwigTemplate_c5c779c0c9bca6f391dad90a44af6b5012634cb95c7a05f0cb89d988b53
 \t<div class=\"posicionBotonesShow\">
 
 \t\t<a href=\"";
-        // line 41
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 41, $this->source); })()), "id", [], "any", false, false, false, 41)]), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["cliente"]) || array_key_exists("cliente", $context) ? $context["cliente"] : (function () { throw new RuntimeError('Variable "cliente" does not exist.', 49, $this->source); })()), "id", [], "any", false, false, false, 49)]), "html", null, true);
         echo "\">Editar /
 \t\t</a>
 \t\t<a href=\"";
-        // line 43
+        // line 51
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_index");
         echo "\">Back to list</a>
 
@@ -151,7 +165,7 @@ class __TwigTemplate_c5c779c0c9bca6f391dad90a44af6b5012634cb95c7a05f0cb89d988b53
 
     public function getDebugInfo()
     {
-        return array (  129 => 43,  124 => 41,  113 => 33,  106 => 29,  99 => 25,  92 => 21,  85 => 17,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  143 => 51,  138 => 49,  127 => 41,  120 => 37,  113 => 33,  106 => 29,  99 => 25,  92 => 21,  85 => 17,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -181,6 +195,14 @@ class __TwigTemplate_c5c779c0c9bca6f391dad90a44af6b5012634cb95c7a05f0cb89d988b53
 \t\t\t<tr>
 \t\t\t\t<th>Direccion</th>
 \t\t\t\t<td>{{ cliente.direccion }}</td>
+\t\t\t</tr>
+\t\t\t<tr>
+\t\t\t\t<th>Ciudad</th>
+\t\t\t\t<td>{{ cliente.ciudad }}</td>
+\t\t\t</tr>
+\t\t\t\t<tr>
+\t\t\t\t<th>Codigo postal</th>
+\t\t\t\t<td>{{ cliente.getCodigoPostal }}</td>
 \t\t\t</tr>
 \t\t\t<tr>
 \t\t\t\t<th>Telefono</th>

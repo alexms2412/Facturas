@@ -42,12 +42,12 @@ class __TwigTemplate_9a9297640548c90beca98c356dab68d8a3d147c142cf1f7b7ff3bf93d4d
         // line 1
         echo "<form method=\"post\" action=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["pedido"]) || array_key_exists("pedido", $context) ? $context["pedido"] : (function () { throw new RuntimeError('Variable "pedido" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        echo "\" onsubmit=\"return confirm('¿Seguro que desea eliminar este pedido?');\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["pedido"]) || array_key_exists("pedido", $context) ? $context["pedido"] : (function () { throw new RuntimeError('Variable "pedido" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-danger\">Eliminar</button>
 </form>
 ";
         
@@ -75,9 +75,9 @@ class __TwigTemplate_9a9297640548c90beca98c356dab68d8a3d147c142cf1f7b7ff3bf93d4d
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('app_pedido_delete', {'id': pedido.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("<form method=\"post\" action=\"{{ path('app_pedido_delete', {'id': pedido.id}) }}\" onsubmit=\"return confirm('¿Seguro que desea eliminar este pedido?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ pedido.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-danger\">Eliminar</button>
 </form>
 ", "pedido/_delete_form.html.twig", "C:\\Users\\aleol\\Desktop\\Pedidos\\GestionFacturas\\templates\\pedido\\_delete_form.html.twig");
     }

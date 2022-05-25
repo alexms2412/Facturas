@@ -67,10 +67,10 @@ class Empresa extends \App\Entity\Empresa implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'username', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'nombreEmpresa', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'codigoPostal', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'logo', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'productos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'clientes'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'username', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'nombreEmpresa', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'codigoPostal', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'logo', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'productos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'clientes', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'ciudad'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'username', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'nombreEmpresa', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'codigoPostal', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'logo', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'productos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'clientes'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'username', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'nombreEmpresa', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'correoElectronico', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'codigoPostal', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'direccion', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'telefono', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'dni', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'logo', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'pedidos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'productos', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'clientes', '' . "\0" . 'App\\Entity\\Empresa' . "\0" . 'ciudad'];
     }
 
     /**
@@ -542,6 +542,28 @@ class Empresa extends \App\Entity\Empresa implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCliente', [$cliente]);
 
         return parent::removeCliente($cliente);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCiudad(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCiudad', []);
+
+        return parent::getCiudad();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCiudad(string $ciudad): \App\Entity\Empresa
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCiudad', [$ciudad]);
+
+        return parent::setCiudad($ciudad);
     }
 
 }

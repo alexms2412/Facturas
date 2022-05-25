@@ -58,6 +58,9 @@ class Empresa implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'empresa', targetEntity: Cliente::class)]
     private $clientes;
 
+    #[ORM\Column(type: 'string', length: 60)]
+    private $ciudad;
+
     public function __construct()
     {
         $this->pedidos = new ArrayCollection();
@@ -315,6 +318,18 @@ class Empresa implements UserInterface, PasswordAuthenticatedUserInterface
                 $cliente->setEmpresa(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCiudad(): ?string
+    {
+        return $this->ciudad;
+    }
+
+    public function setCiudad(string $ciudad): self
+    {
+        $this->ciudad = $ciudad;
 
         return $this;
     }

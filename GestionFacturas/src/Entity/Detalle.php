@@ -25,6 +25,14 @@ class Detalle
     #[ORM\ManyToOne(targetEntity: Producto::class, inversedBy: 'detalles')]
     private $producto;
 
+
+    public function __construct($pedido)
+    {
+        $this->setPedido($pedido);
+        
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

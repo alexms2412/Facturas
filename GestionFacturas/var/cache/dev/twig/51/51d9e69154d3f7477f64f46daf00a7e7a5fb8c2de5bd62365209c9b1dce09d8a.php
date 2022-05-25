@@ -48,7 +48,7 @@ class __TwigTemplate_a20b78232e107ee329ce92670b65ffb49c29106bddec185e5fec0773dff
         echo "
     <button class=\"btn\">";
         // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Guardar")) : ("Guardar")), "html", null, true);
         echo "</button>
 ";
         // line 4
@@ -82,7 +82,7 @@ class __TwigTemplate_a20b78232e107ee329ce92670b65ffb49c29106bddec185e5fec0773dff
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <button class=\"btn\">{{ button_label|default('Guardar') }}</button>
 {{ form_end(form) }}
 ", "detalle/_form.html.twig", "C:\\Users\\aleol\\Desktop\\Pedidos\\GestionFacturas\\templates\\detalle\\_form.html.twig");
     }

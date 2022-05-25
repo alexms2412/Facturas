@@ -44,7 +44,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for pedido in pedidos %}
+				{% for pedido in pedidos |reverse %}
 
 					{% if pedido.estado == false %}
 
@@ -58,11 +58,9 @@
 							<td>
 								<a href="{{ path('app_pedido_show', {'id': pedido.id}) }}">Ver /
 								</a>
-								<a href="{{ path('app_pedido_edit', {'id': pedido.id}) }}">Editar /  &nbsp;</a>
+								<a href="{{ path('app_pedido_edit', {'id': pedido.id}) }}">Editar   &nbsp;</a>
 
-								<a href="/descargar">
-									<i class="fa fa-download" aria-hidden="true"></i>
-								</a>
+								
 
 							</td>
 						</tr>

@@ -16,6 +16,8 @@ class ClienteType extends AbstractType
             ->add('nombre')
             ->add('apellidos')
             ->add('direccion')
+            ->add('ciudad')
+            ->add('codigoPostal')
             ->add('telefono')
             ->add('correoElectronico')
             ->add('dni');

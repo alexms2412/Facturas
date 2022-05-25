@@ -159,9 +159,12 @@
         float: left;
     }
     
-    .container {
-        background-color: rgb(202, 215, 226);
-        margin-top: 40px
+    .containerPedido {
+        background-color: rgb(247, 247, 248);
+        margin-top: 10px;
+        -webkit-box-shadow: 22px -12px 18px -11px rgba(120, 115, 120, 1);
+        -moz-box-shadow: 22px -12px 18px -11px rgba(120, 115, 120, 1);
+        box-shadow: 22px -12px 18px -11px rgba(120, 115, 120, 1);
     }
     
     .nombreEmpresaFactura {
@@ -184,6 +187,17 @@
     .posicionPrecioTotal {
         margin-left: 74%;
         margin-top: 40px;
+    }
+    
+    .posicionPrecioTotalIVA {
+        margin-left: 74%;
+        margin-top: 10px;
+    }
+    
+    .posicionPrecioTotalTotal {
+        margin-left: 74%;
+        margin-top: 10px;
+        font-weight: bold;
     }
     
     .firmaHr {
@@ -221,7 +235,18 @@
     }
     
     .tablaVer th {
-        padding-top: 6px;
+        padding-top: 4px;
         padding-bottom: 6px;
         text-align: left;
+    }
+    
+    .posicionAccionesShow {
+        margin-left: 14%;
+        padding-top: 40px;
+    }
+    
+    .posicionAccionesShowDelete {
+        margin-left: 80%;
+        padding-top: 30px;
+        margin-bottom: 40px;
     }

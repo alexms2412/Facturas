@@ -40,6 +40,12 @@ class Cliente
     #[ORM\ManyToOne(targetEntity: Empresa::class, inversedBy: 'clientes')]
     private $empresa;
 
+    #[ORM\Column(type: 'integer')]
+    private $codigoPostal;
+
+    #[ORM\Column(type: 'string', length: 60)]
+    private $ciudad;
+
     public function __construct($empresa)
     {
         $this->setEmpresa($empresa);
@@ -169,6 +175,30 @@ class Cliente
     public function setEmpresa(?Empresa $empresa): self
     {
         $this->empresa = $empresa;
+
+        return $this;
+    }
+
+    public function getCodigoPostal(): ?int
+    {
+        return $this->codigoPostal;
+    }
+
+    public function setCodigoPostal(int $codigoPostal): self
+    {
+        $this->codigoPostal = $codigoPostal;
+
+        return $this;
+    }
+
+    public function getCiudad(): ?string
+    {
+        return $this->ciudad;
+    }
+
+    public function setCiudad(string $ciudad): self
+    {
+        $this->ciudad = $ciudad;
 
         return $this;
     }

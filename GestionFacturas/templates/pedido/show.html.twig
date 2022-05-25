@@ -3,12 +3,12 @@
 
 {% block contenido %}
 
+	{% set total = 0 %}
 
-	<a href="{{ path('app_pedido_index') }}">Atras /</a>
+	{% set iva = 0 %}
 
-	<a href="{{ path('app_pedido_edit', {'id': pedido.id}) }}">Editar</a>
 
-	<div class="container">
+	<div class="container containerPedido">
 
 		<div class="nombreEmpresaFactura">
 			<h1>
@@ -39,110 +39,121 @@
 		<div class="posicionDatosEmpresa">
 
 			<h6>
-				Datos fiscales:
+				Datos:
 			</h6>
 
 			<p>
-				Dirección:
-				{{ pedido.empresa.getDireccion() }}</p>
-			<p></p>
+
+				{{ pedido.empresa.getDireccion() }}
+
+			</p>
 			<p>
-				Gmail:
+				{{ pedido.empresa.getCodigoPostal() }}
+				{{ pedido.empresa.getCiudad() }}</p>
+			<p>
+
 				{{ pedido.empresa.getCorreoElectronico() }}</p>
 
-
 			<p>
-				Codigo postal:
-				{{ pedido.empresa.getCodigoPostal() }}</p>
 
-			<p>
-				Telefono:
 				{{ pedido.empresa.getTelefono() }}</p>
 
-			NIF:
-			{{ pedido.empresa.getDni() }}</p>
+
+			<p>{{ pedido.empresa.getDni() }}</p>
 
 
-	</div>
+		</div>
 
-	<div class="clienteFactura">
-
-
-		<h6>
-			{{ pedido.estado ? 'Factura' : 'Presupuesto' }}
-			a:
-		</h6>
-
-		<p>
-			Nombre:
-			{{ pedido.Cliente.getNombre }}</p>
-
-		<p>
-			Apellidos:
-			{{ pedido.Cliente.getApellidos }}</p>
-
-		<p>
-			Dirreccion:
-			{{ pedido.Cliente.getDireccion }}</p>
-		<p>
-			Telefono:
-			{{ pedido.Cliente.getTelefono }}</p>
-
-		<p>
-			DNI:
-			{{ pedido.Cliente.getDni }}</p>
-
-	</div>
-
-	<br>
+		<div class="clienteFactura">
 
 
-	<table class="tablaVer">
-		<thead>
-			<tr>
-				<th>Cantidad</th>
-				<th>Descripción</th>
-				<th>Nombre</th>
+			<h6>
+				{{ pedido.estado ? 'Factura' : 'Presupuesto' }}
+				a:
+			</h6>
 
-				<th>Precio</th>
-			</tr>
-		</thead>
-		<tbody>
+			<p>
 
-			{% set total = 0 %}
+				{{ pedido.Cliente.getNombre }}
+				{{ pedido.Cliente.getApellidos }}</p>
 
-			{% for detalle in detalles %}
-
-				{% if  detalle.pedido.getId()   ==  pedido.id  %}
-
-					<tr>
-						<td>{{ detalle.Cantidad }}</td>
-						<td>{{ detalle.producto.getDescripcion() }}</td>
-						<td>{{ detalle.producto.getNombre() }}</td>
-						<td>{{ detalle.precio }}
-							€</td>
-
-					</tr>
-
-					{% set total = total + detalle.Cantidad *  detalle.precio  %}
-
-				{% endif %}
+			<p>
 
 
-			{% else %}
+				{{ pedido.Cliente.getDireccion }}</p>
+
+			<p>
+				{{ pedido.Cliente.getCodigoPostal() }}
+				{{ pedido.Cliente.getCiudad() }}</p>
+			<p></p>
+			<p>
+
+				{{ pedido.Cliente.getTelefono }}</p>
+
+			<p>
+
+				{{ pedido.Cliente.getDni }}</p>
+
+		</div>
+
+		<br>
+
+
+		<table class="tablaVer">
+			<thead>
 				<tr>
-					<td colspan="4">no records found</td>
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Cantidad</th>
+					<th>Precio U.</th>
+					<th>Precio Total</th>
 				</tr>
-			{% endfor %}
+			</thead>
+			<tbody>
 
 
-		</tbody>
+				{% for detalle in detalles %}
+
+					{% if  detalle.pedido.getId()   ==  pedido.id  %}
+
+						<tr>
+							<td>{{ detalle.producto.getNombre() }}</td>
+							<td>{{ detalle.producto.getDescripcion() }}</td>
+							<td>{{ detalle.Cantidad }}</td>
+							<td>{{ detalle.precio }}
+								€</td>
+							{% set preciototal = detalle.Cantidad *  detalle.precio  %}
+							<td>
+								{{preciototal}}
+								€</td>
+
+						</tr>
+
+						{% set total = total + detalle.Cantidad *  detalle.precio  %}
+
+					{% endif %}
+
+
+				{% else %}
+					<tr>
+						<td colspan="4">no records found</td>
+					</tr>
+				{% endfor %}
+
+
+			</tbody>
+
+		</div>
 
 	</div>
-
 
 </tbody></table><h5 class="posicionPrecioTotal">
-Total
-{{ pedido.estado ? 'factura' : 'presupuesto' }}:
-				   &nbsp;&nbsp;{{ total }}
-€</h5><h6 class="firma">Firma:</h6><hr class="firmaHr"></div>{{ include('pedido/_delete_form.html.twig') }}{% endblock %}
+
+Base importe: &nbsp;{{ total }}
+€</h5>{% set iva = total * 0.21 %}<h6 class="posicionPrecioTotalIVA">
+IVA 21%: &nbsp;
+{{ iva }}
+€</h6>{% set totalFinal = total + iva %}<h6 class="posicionPrecioTotalTotal">
+Total: &nbsp;
+{{totalFinal}}
+€</h6><h6 class="firma">Firma:</h6><hr class="firmaHr"></div>{% endblock %}

@@ -14,11 +14,15 @@ use App\Form\DetalleType;
 use App\Repository\DetalleRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Repository\EmpresaRepository;
+use App\Core\DataBase;
 
 
 #[Route('/pedido')]
 class PedidoController extends AbstractController
 {
+
+
+
     #[Route('/', name: 'app_pedido_index', methods: ['GET'])]
     public function index(PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
@@ -33,7 +37,6 @@ class PedidoController extends AbstractController
 
     }
 
- 
     
     #[Route('/facturas', name: 'app_pedido_facturas', methods: ['GET'])]
     public function facturas(PedidoRepository $pedidoRepository, UserInterface $empresa): Response
@@ -59,7 +62,7 @@ class PedidoController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $pedidoRepository->add($pedido);
-            return $this->redirectToRoute('app_pedido_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_detalle_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('pedido/new.html.twig', [
@@ -78,8 +81,9 @@ class PedidoController extends AbstractController
         ]);
     }
 
+
     #[Route('/{id}/edit', name: 'app_pedido_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Pedido $pedido, PedidoRepository $pedidoRepository): Response
+    public function edit(Request $request, Pedido $pedido, PedidoRepository $pedidoRepository,DetalleRepository $detalleRepository): Response
     {
         $form = $this->createForm(PedidoType::class, $pedido);
         $form->handleRequest($request);
@@ -92,6 +96,7 @@ class PedidoController extends AbstractController
         return $this->renderForm('pedido/edit.html.twig', [
             'pedido' => $pedido,
             'form' => $form,
+            'detalles' => $detalleRepository->findAll(),
         ]);
     }
 

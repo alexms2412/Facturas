@@ -43,7 +43,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for pedido in pedidos %}
+				{% for pedido in pedidos |reverse%}
 
 					{% if pedido.estado == true %}
 
@@ -56,7 +56,7 @@
 							</td>
 							<td>
 
-								<a href="{{ path('app_pedido_show', {'id': pedido.id}) }}">Ver / 
+								<a href="{{ path('app_pedido_show', {'id': pedido.id}) }}">Ver /
 								</a>
 								<a href="/descargar">
 									<i class="fa fa-download" aria-hidden="true"></i>
@@ -69,7 +69,7 @@
 
 					{% endif %}
 
-					{% else %}
+				{% else %}
 					<tr>
 						<td colspan="7">No records found</td>
 					</tr>
@@ -110,6 +110,14 @@
 			</ul>
 
 		</div>
+
+		{% include 'pagination.html.twig' with {
+			currentFilters: { myFilter: filtervariables },
+			currentPage: page,
+			paginationPath: "myroute",
+			lastPage: totalPages,
+			showAlwaysFirstAndLast: true
+		} only %}
 
 
 	{% endblock %}

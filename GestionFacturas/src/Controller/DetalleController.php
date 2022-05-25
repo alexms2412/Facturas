@@ -27,23 +27,23 @@ class DetalleController extends AbstractController
     public function new(Request $request, DetalleRepository $detalleRepository, PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
 
+        $detalle = new Detalle(($pedidoRepository->findBy(
+            array(), 
+            array('id' => 'DESC'),
+            1, 
+          ))[0  ]);
 
-        $detalle = new Detalle();
         $form = $this->createForm(DetalleType::class, $detalle);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $detalleRepository->add($detalle);
-            return $this->redirectToRoute('app_detalle_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_detalle_new', [], Response::HTTP_SEE_OTHER);
         }
 
 
         return $this->renderForm('detalle/new.html.twig', [
-            'pedido' => $pedidoRepository->findOneBy(
-
-                array('id' => 'DESC')
-            ),
-
+           
             'detalle' => $detalle,
             'form' => $form,
         ]);
@@ -65,7 +65,7 @@ class DetalleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $detalleRepository->add($detalle);
-            return $this->redirectToRoute('app_detalle_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_pedido_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('detalle/edit.html.twig', [

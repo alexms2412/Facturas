@@ -93,7 +93,7 @@ class __TwigTemplate_117b776ef96bfee380e7feddc29241dc945ba682071977cb73cba91f1ad
 \t\t\t\t<a href=\"";
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_producto_index");
-        echo "\">Back to list</a>
+        echo "\">Atras</a>
 
 \t\t\t</div>
 \t\t</div>
@@ -149,7 +149,7 @@ class __TwigTemplate_117b776ef96bfee380e7feddc29241dc945ba682071977cb73cba91f1ad
 
 \t\t\t\t{{ include('producto/_delete_form.html.twig') }}
 
-\t\t\t\t<a href=\"{{ path('app_producto_index') }}\">Back to list</a>
+\t\t\t\t<a href=\"{{ path('app_producto_index') }}\">Atras</a>
 
 \t\t\t</div>
 \t\t</div>
