@@ -83,7 +83,7 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
 \t\t\t\t<i class=\"fa fa-file-text-o\" aria-hidden=\"true\"></i>
 \t\t\t</a>
 
-\t\t\t<a href=\"/cliente\" class=\"botonpedido\">
+\t\t\t<a href=\"/cliente\" class=\" ok botonpedido\">
 \t\t\t\t<i class=\"fa fa-user\" aria-hidden=\"true\"></i>
 \t\t\t</a>
 
@@ -226,7 +226,7 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
 \t\t\t\t<i class=\"fa fa-file-text-o\" aria-hidden=\"true\"></i>
 \t\t\t</a>
 
-\t\t\t<a href=\"/cliente\" class=\"botonpedido\">
+\t\t\t<a href=\"/cliente\" class=\" ok botonpedido\">
 \t\t\t\t<i class=\"fa fa-user\" aria-hidden=\"true\"></i>
 \t\t\t</a>
 

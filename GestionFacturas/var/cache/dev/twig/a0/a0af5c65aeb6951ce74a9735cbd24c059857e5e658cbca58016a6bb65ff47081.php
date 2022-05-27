@@ -85,7 +85,7 @@ class __TwigTemplate_aff17fbbf7c3b1b142cddc90ff18acac32e826a5707843340a25bfe0e28
 \t\t\t\t<i class=\"fa fa-user\" aria-hidden=\"true\"></i>
 \t\t\t</a>
 
-\t\t\t<a href=\"/producto\" class=\"botonpedido\">
+\t\t\t<a href=\"/producto\" class=\" ok botonpedido\">
 
 \t\t\t\t<i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"></i>
 \t\t\t</a>
@@ -211,7 +211,7 @@ class __TwigTemplate_aff17fbbf7c3b1b142cddc90ff18acac32e826a5707843340a25bfe0e28
 \t\t\t\t<i class=\"fa fa-user\" aria-hidden=\"true\"></i>
 \t\t\t</a>
 
-\t\t\t<a href=\"/producto\" class=\"botonpedido\">
+\t\t\t<a href=\"/producto\" class=\" ok botonpedido\">
 
 \t\t\t\t<i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"></i>
 \t\t\t</a>

@@ -271,3 +271,8 @@
     .botonEliminarFactura:hover {
         background-color: #942a2a;
     }
+    
+    .ok {
+        border-bottom: 2px solid rgb(250, 92, 92);
+        margin-bottom: -2px;
+    }

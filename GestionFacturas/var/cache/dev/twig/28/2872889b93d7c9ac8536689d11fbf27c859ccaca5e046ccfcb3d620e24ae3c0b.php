@@ -76,7 +76,7 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
         echo "
 \t<div>
 \t\t<div>
-\t\t\t<a href=\"/pedido\" class=\"botonpedido botonesindex\">Pedidos
+\t\t\t<a href=\"/pedido\" class=\" ok botonpedido botonesindex \">Pedidos
 \t\t\t</a>
 \t\t\t<a href=\"/pedido/facturas\" class=\"botonpedido botonesindex\">Facturas</a>
 
@@ -231,7 +231,7 @@ class __TwigTemplate_9b23a0944e5df7e7709a6e81c87123f14659a7ad0a36bef6d43d3c9adff
 
 \t<div>
 \t\t<div>
-\t\t\t<a href=\"/pedido\" class=\"botonpedido botonesindex\">Pedidos
+\t\t\t<a href=\"/pedido\" class=\" ok botonpedido botonesindex \">Pedidos
 \t\t\t</a>
 \t\t\t<a href=\"/pedido/facturas\" class=\"botonpedido botonesindex\">Facturas</a>
 

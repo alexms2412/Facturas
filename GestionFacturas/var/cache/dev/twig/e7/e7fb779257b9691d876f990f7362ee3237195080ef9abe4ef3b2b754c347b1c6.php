@@ -78,7 +78,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t<div>
 \t\t\t<a href=\"/pedido\" class=\"botonpedido botonesindex\">Pedidos
 \t\t\t</a>
-\t\t\t<a href=\"/pedido/facturas\" class=\"botonpedido botonesindex\">Facturas</a>
+\t\t\t<a href=\"/pedido/facturas\" class=\" ok botonpedido botonesindex\">Facturas</a>
 
 \t\t\t<a href=\"";
         // line 17
@@ -258,7 +258,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t<div>
 \t\t\t<a href=\"/pedido\" class=\"botonpedido botonesindex\">Pedidos
 \t\t\t</a>
-\t\t\t<a href=\"/pedido/facturas\" class=\"botonpedido botonesindex\">Facturas</a>
+\t\t\t<a href=\"/pedido/facturas\" class=\" ok botonpedido botonesindex\">Facturas</a>
 
 \t\t\t<a href=\"{{ path('app_pedido_new') }}\" class=\"botonpedido\">
 \t\t\t\t<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>

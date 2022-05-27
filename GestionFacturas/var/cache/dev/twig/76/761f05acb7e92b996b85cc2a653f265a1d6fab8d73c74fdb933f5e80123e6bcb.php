@@ -25,7 +25,7 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'contenido' => [$this, 'block_contenido'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -55,14 +55,14 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
     }
 
     // line 4
-    public function block_contenido($context, array $blocks = [])
+    public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenido"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
         echo "
@@ -117,7 +117,7 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
         return new Source("{% extends 'menu.html.twig' %}
 
 
-{% block contenido %}
+{% block body %}
 
 \t<div class=\"container h-100 \">
 \t\t<div class=\"row h-100 justify-content-center aling-items-center\">
