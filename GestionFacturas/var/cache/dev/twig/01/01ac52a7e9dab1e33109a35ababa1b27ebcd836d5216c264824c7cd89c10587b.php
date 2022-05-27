@@ -72,7 +72,7 @@ class __TwigTemplate_117b776ef96bfee380e7feddc29241dc945ba682071977cb73cba91f1ad
 \t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
 \t\t\t\t<h1 class=\"tituloLogin\">Editar Producto
-\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/pedido\">
+\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/producto\">
 \t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\"></i>
 
 \t\t\t\t\t</a>
@@ -137,7 +137,7 @@ class __TwigTemplate_117b776ef96bfee380e7feddc29241dc945ba682071977cb73cba91f1ad
 \t\t\t<div class=\"col-sm-12 col-md-12 col-lg-9 bg-white rounded my-3 p-5\">
 
 \t\t\t\t<h1 class=\"tituloLogin\">Editar Producto
-\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/pedido\">
+\t\t\t\t\t<a class=\"tituloLoginBotonCerrar\" href=\"/producto\">
 \t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\"></i>
 
 \t\t\t\t\t</a>

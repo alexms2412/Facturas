@@ -6,6 +6,8 @@
 
 	<br>
 
+	{% set nombre = 0 %}
+
 	<div>
 		<div>
 			<a href="/pedido" class="botonpedido botonesindex">Pedidos
@@ -35,7 +37,7 @@
 		<table class="tablePedidos ">
 			<thead>
 				<tr>
-					<th scope="col">ID</th>
+					<th scope="col">N.</th>
 					<th scope="col">Fecha</th>
 					<th scope="col">Nombre Pedido</th>
 
@@ -44,12 +46,15 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 				{% for pedido in pedidos |reverse %}
 
 					{% if pedido.estado == false %}
 
+						{% set nombre = nombre + 1 %}
+
 						<tr>
-							<td>{{ pedido.id }}</td>
+							<td>{{ nombre }}</td>
 							<td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
 							<td>{{ pedido.nombrePedido }}</td>
 
@@ -60,7 +65,6 @@
 								</a>
 								<a href="{{ path('app_pedido_edit', {'id': pedido.id}) }}">Editar   &nbsp;</a>
 
-								
 
 							</td>
 						</tr>
@@ -78,37 +82,5 @@
 			</tbody>
 		</table>
 
-		<div class="posicionpaginado">
-			<ul class="pagination">
-				<li>
-					<a href="#">«</a>
-				</li>
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a class="active" href="#">2</a>
-				</li>
-				<li>
-					<a href="#">3</a>
-				</li>
-				<li>
-					<a href="#">4</a>
-				</li>
-				<li>
-					<a href="#">5</a>
-				</li>
-				<li>
-					<a href="#">6</a>
-				</li>
-				<li>
-					<a href="#">7</a>
-				</li>
-				<li>
-					<a href="#">»</a>
-				</li>
-			</ul>
-
-		</div>
 
 	{% endblock %}

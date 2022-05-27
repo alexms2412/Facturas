@@ -110,6 +110,10 @@
         margin-left: 10px;
     }
     
+    .posicionimg {
+        margin-top: -120px;
+    }
+    
     .tableShow {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -249,4 +253,21 @@
         margin-left: 80%;
         padding-top: 30px;
         margin-bottom: 40px;
+    }
+    
+    .botonEliminarFactura {
+        background-color: #e73f3f;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+    
+    .botonEliminarFactura:hover {
+        background-color: #942a2a;
     }

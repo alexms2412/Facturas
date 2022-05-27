@@ -16,15 +16,19 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class EmpresaController extends AbstractController
 {
     #[Route('/' , name: 'app_empresa_index', methods: ['GET'])]
-    public function index(EmpresaRepository $empresaRepository, UserInterface $emp): Response
+    public function index(EmpresaRepository $empresaRepository, UserInterface $emp,  UserInterface $empresa): Response
     {
 
           /** @var Empresa $emp */
+          /** @var Empresa $empresa */
 
         return $this->render('empresa/index.html.twig', [
             'empresas' => $empresaRepository->findBy(['id' => $emp->getId()]),
+            'empresa' => $empresa->getNombreEmpresa(),
 
         ]);
+
+        
     }
 
 

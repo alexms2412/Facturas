@@ -20,9 +20,23 @@ class ProductoController extends AbstractController
          /** @var Empresa $empresa */
         return $this->render('producto/index.html.twig', [
             'productos' => $productoRepository->findBy(['empresa' => $empresa->getId()]),
+            'empresa' => $empresa->getNombreEmpresa(),
             
         ]);
     }
+
+    #[Route('/error_producto', name: 'app_producto_error', methods: ['GET'])]
+    public function index2(ProductoRepository $productoRepository, UserInterface $empresa): Response
+    {
+         /** @var Empresa $empresa */
+        return $this->render('producto/capturarError.html.twig', [
+            
+            'empresa' => $empresa->getNombreEmpresa(),
+            
+        ]);
+    }
+
+
 
     #[Route('/new', name: 'app_producto_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ProductoRepository $productoRepository, UserInterface $empresa): Response
@@ -41,20 +55,28 @@ class ProductoController extends AbstractController
         return $this->renderForm('producto/new.html.twig', [
             'producto' => $producto,
             'form' => $form,
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
     #[Route('/{id}', name: 'app_producto_show', methods: ['GET'])]
-    public function show(Producto $producto): Response
+    public function show(Producto $producto, UserInterface $empresa): Response
     {
+
+        /** @var Empresa $empresa */
+
         return $this->render('producto/show.html.twig', [
             'producto' => $producto,
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_producto_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Producto $producto, ProductoRepository $productoRepository): Response
+    public function edit(Request $request, Producto $producto, ProductoRepository $productoRepository, UserInterface $empresa): Response
     {
+
+        /** @var Empresa $empresa */
+
         $form = $this->createForm(ProductoType::class, $producto);
         $form->handleRequest($request);
 
@@ -66,16 +88,31 @@ class ProductoController extends AbstractController
         return $this->renderForm('producto/edit.html.twig', [
             'producto' => $producto,
             'form' => $form,
+            'empresa' => $empresa->getNombreEmpresa(),
+            
         ]);
     }
+
+    
+
+   
 
     #[Route('/{id}', name: 'app_producto_delete', methods: ['POST'])]
     public function delete(Request $request, Producto $producto, ProductoRepository $productoRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$producto->getId(), $request->request->get('_token'))) {
-            $productoRepository->remove($producto);
-        }
+        try{
 
+            if ($this->isCsrfTokenValid('delete'.$producto->getId(), $request->request->get('_token'))) {
+                $productoRepository->remove($producto);
+            }
+            
+        }catch(\Exception){
+            return $this->redirectToRoute('app_producto_error', [], Response::HTTP_SEE_OTHER);
+
+           
+
+        }
+       
         return $this->redirectToRoute('app_producto_index', [], Response::HTTP_SEE_OTHER);
     }
 }

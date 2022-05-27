@@ -67,6 +67,12 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
         // line 5
         echo "
 \t<br>
+
+\t";
+        // line 8
+        $context["nombre"] = 0;
+        // line 9
+        echo "
 \t<div>
 
 \t\t<div>
@@ -75,7 +81,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t<a href=\"/pedido/facturas\" class=\"botonpedido botonesindex\">Facturas</a>
 
 \t\t\t<a href=\"";
-        // line 14
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_new");
         echo "\" class=\"botonpedido\">
 \t\t\t\t<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>
@@ -100,7 +106,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t<table class=\"tablePedidos\">
 \t\t\t<thead>
 \t\t\t\t<tr>
-\t\t\t\t\t<th scope=\"col\">ID</th>
+\t\t\t\t\t<th scope=\"col\">N.</th>
 \t\t\t\t\t<th scope=\"col\">Fecha</th>
 \t\t\t\t\t<th scope=\"col\">Nombre Factura</th>
 \t\t\t\t\t<th scope=\"col\">Cliente</th>
@@ -110,64 +116,92 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t</thead>
 \t\t\t<tbody>
 \t\t\t\t";
-        // line 46
+        // line 49
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_reverse_filter($this->env, (isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 46, $this->source); })())));
+        $context['_seq'] = twig_ensure_traversable(twig_reverse_filter($this->env, (isset($context["pedidos"]) || array_key_exists("pedidos", $context) ? $context["pedidos"] : (function () { throw new RuntimeError('Variable "pedidos" does not exist.', 49, $this->source); })())));
         $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["pedido"]) {
-            // line 47
+            // line 50
             echo "
 \t\t\t\t\t";
-            // line 48
-            if ((twig_get_attribute($this->env, $this->source, $context["pedido"], "estado", [], "any", false, false, false, 48) == true)) {
-                // line 49
+            // line 51
+            if ((twig_get_attribute($this->env, $this->source, $context["pedido"], "estado", [], "any", false, false, false, 51) == true)) {
+                // line 52
                 echo "
+\t\t\t\t\t\t";
+                // line 53
+                $context["nombre"] = ((isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 53, $this->source); })()) + 1);
+                // line 54
+                echo "
+
 
 \t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t<td>";
-                // line 52
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 52), "html", null, true);
+                // line 58
+                echo twig_escape_filter($this->env, (isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 58, $this->source); })()), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 53
-                ((twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 53)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 53), "Y-m-d"), "html", null, true))) : (print ("")));
+                // line 59
+                ((twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 59)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "fecha", [], "any", false, false, false, 59), "Y-m-d"), "html", null, true))) : (print ("")));
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 54
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "nombrePedido", [], "any", false, false, false, 54), "html", null, true);
+                // line 60
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "nombrePedido", [], "any", false, false, false, 60), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 55
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "Cliente", [], "any", false, false, false, 55), "html", null, true);
+                // line 61
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pedido"], "Cliente", [], "any", false, false, false, 61), "html", null, true);
                 echo "
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
 
 \t\t\t\t\t\t\t\t<a href=\"";
-                // line 59
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 59)]), "html", null, true);
-                echo "\">Ver /
+                // line 65
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pedido"], "id", [], "any", false, false, false, 65)]), "html", null, true);
+                echo "\">Ver 
 \t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a href=\"/descargar\">
-\t\t\t\t\t\t\t\t\t<i class=\"fa fa-download\" aria-hidden=\"true\"></i>
-\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t";
+                // line 67
+                echo twig_include($this->env, $context, "pedido/_delete_form_factura.html.twig");
+                echo "
 
 \t\t\t\t\t\t\t</td>
 
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t\t";
             } else {
-                // line 69
+                // line 73
                 echo "
 \t\t\t\t\t";
             }
-            // line 71
+            // line 75
             echo "
 \t\t\t\t";
             $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         if (!$context['_iterated']) {
-            // line 73
+            // line 77
             echo "\t\t\t\t\t<tr>
 \t\t\t\t\t\t<td colspan=\"7\">No records found</td>
 \t\t\t\t\t</tr>
@@ -177,51 +211,12 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pedido'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 78
+        // line 82
         echo "\t\t\t</tbody>
 \t\t</table>
 
-\t\t<div class=\"posicionpaginado\">
-\t\t\t<ul class=\"pagination\">
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">«</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">1</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a class=\"active\" href=\"#\">2</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">3</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">4</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">5</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">6</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">7</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">»</a>
-\t\t\t\t</li>
-\t\t\t</ul>
 
-\t\t</div>
-
-\t\t";
-        // line 114
-        $this->loadTemplate("pagination.html.twig", "pedido/indexFacturas.html.twig", 114)->display(twig_to_array(["currentFilters" => ["myFilter" =>         // line 115
-(isset($context["filtervariables"]) || array_key_exists("filtervariables", $context) ? $context["filtervariables"] : (function () { throw new RuntimeError('Variable "filtervariables" does not exist.', 115, $this->source); })())], "currentPage" =>         // line 116
-(isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 116, $this->source); })()), "paginationPath" => "myroute", "lastPage" =>         // line 118
-(isset($context["totalPages"]) || array_key_exists("totalPages", $context) ? $context["totalPages"] : (function () { throw new RuntimeError('Variable "totalPages" does not exist.', 118, $this->source); })()), "showAlwaysFirstAndLast" => true]));
-        // line 121
-        echo "
+\t
 
 \t";
         
@@ -244,7 +239,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 
     public function getDebugInfo()
     {
-        return array (  224 => 121,  222 => 118,  221 => 116,  220 => 115,  219 => 114,  181 => 78,  171 => 73,  165 => 71,  161 => 69,  148 => 59,  141 => 55,  137 => 54,  133 => 53,  129 => 52,  124 => 49,  122 => 48,  119 => 47,  114 => 46,  79 => 14,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  215 => 82,  205 => 77,  191 => 75,  187 => 73,  178 => 67,  173 => 65,  166 => 61,  162 => 60,  158 => 59,  154 => 58,  148 => 54,  146 => 53,  143 => 52,  141 => 51,  138 => 50,  120 => 49,  85 => 17,  75 => 9,  73 => 8,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -255,6 +250,9 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 {% block contenido %}
 
 \t<br>
+
+\t{% set nombre = 0 %}
+
 \t<div>
 
 \t\t<div>
@@ -285,7 +283,7 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t<table class=\"tablePedidos\">
 \t\t\t<thead>
 \t\t\t\t<tr>
-\t\t\t\t\t<th scope=\"col\">ID</th>
+\t\t\t\t\t<th scope=\"col\">N.</th>
 \t\t\t\t\t<th scope=\"col\">Fecha</th>
 \t\t\t\t\t<th scope=\"col\">Nombre Factura</th>
 \t\t\t\t\t<th scope=\"col\">Cliente</th>
@@ -298,20 +296,21 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 
 \t\t\t\t\t{% if pedido.estado == true %}
 
+\t\t\t\t\t\t{% set nombre = nombre + 1 %}
+
+
 
 \t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t<td>{{ pedido.id }}</td>
+\t\t\t\t\t\t\t<td>{{ nombre }}</td>
 \t\t\t\t\t\t\t<td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
 \t\t\t\t\t\t\t<td>{{ pedido.nombrePedido }}</td>
 \t\t\t\t\t\t\t<td>{{ pedido.Cliente}}
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
 
-\t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_show', {'id': pedido.id}) }}\">Ver /
+\t\t\t\t\t\t\t\t<a href=\"{{ path('app_pedido_show', {'id': pedido.id}) }}\">Ver 
 \t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t<a href=\"/descargar\">
-\t\t\t\t\t\t\t\t\t<i class=\"fa fa-download\" aria-hidden=\"true\"></i>
-\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t{{ include('pedido/_delete_form_factura.html.twig') }}
 
 \t\t\t\t\t\t\t</td>
 
@@ -329,47 +328,8 @@ class __TwigTemplate_2bbe989fe846c516aca84d679fc0652044d0ebef88c3001b16cd7b13291
 \t\t\t</tbody>
 \t\t</table>
 
-\t\t<div class=\"posicionpaginado\">
-\t\t\t<ul class=\"pagination\">
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">«</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">1</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a class=\"active\" href=\"#\">2</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">3</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">4</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">5</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">6</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">7</a>
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<a href=\"#\">»</a>
-\t\t\t\t</li>
-\t\t\t</ul>
 
-\t\t</div>
-
-\t\t{% include 'pagination.html.twig' with {
-\t\t\tcurrentFilters: { myFilter: filtervariables },
-\t\t\tcurrentPage: page,
-\t\t\tpaginationPath: \"myroute\",
-\t\t\tlastPage: totalPages,
-\t\t\tshowAlwaysFirstAndLast: true
-\t\t} only %}
-
+\t
 
 \t{% endblock %}
 ", "pedido/indexFacturas.html.twig", "C:\\Users\\aleol\\Desktop\\Pedidos\\GestionFacturas\\templates\\pedido\\indexFacturas.html.twig");

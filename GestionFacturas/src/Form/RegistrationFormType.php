@@ -21,10 +21,9 @@ class RegistrationFormType extends AbstractType
             ->add('correoElectronico')
             ->add('dni')
             ->add('direccion')
+            ->add('ciudad')
             ->add('codigoPostal')
             ->add('telefono')
-            
-
             ->add('username')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

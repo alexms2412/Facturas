@@ -18,6 +18,7 @@ class EmpresaType extends AbstractType
             ->add('nombreEmpresa')
             ->add('correoElectronico')
             ->add('codigoPostal')
+            ->add('ciudad')
             ->add('direccion')
             ->add('telefono')
             ->add('dni')

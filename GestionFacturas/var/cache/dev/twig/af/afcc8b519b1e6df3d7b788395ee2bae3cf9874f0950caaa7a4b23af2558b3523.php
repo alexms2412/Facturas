@@ -94,7 +94,7 @@ class __TwigTemplate_9bd89b8f40fa6ef240fb9d6543a440fbacc65fae901ffd150e0c85a82ef
 \t\t\t\t<h1 class=\"tituloLogin\">
 \t\t\t\t\tGestor Pedidos
 \t\t\t\t</h1>
-\t\t\t\t<h4>Register</h4>
+\t\t\t\t<h4>Registrarse</h4>
 
 
 \t\t\t\t";
@@ -114,17 +114,15 @@ class __TwigTemplate_9bd89b8f40fa6ef240fb9d6543a440fbacc65fae901ffd150e0c85a82ef
         // line 22
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 22, $this->source); })()), "agreeTerms", [], "any", false, false, false, 22), 'row');
         echo "
-\t\t\t\t
 
-
-\t\t\t\t
-        <button type=\"submit\" class=\"btn\">Register</button>
-    ";
-        // line 28
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 28, $this->source); })()), 'form_end');
+\t\t\t\t<button type=\"submit\" class=\"btn\">Register</button>
+\t\t\t\t";
+        // line 25
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 25, $this->source); })()), 'form_end');
         echo "
-\t\t\t\t
-\t\t\t\t<a href=\"/login\"> &nbsp&nbsp  Login</a>
+
+\t\t\t\t<a href=\"/login\">
+\t\t\t\t\t&nbsp&nbsp  Login</a>
 
 \t\t\t</div>
 \t\t</div>
@@ -152,7 +150,7 @@ class __TwigTemplate_9bd89b8f40fa6ef240fb9d6543a440fbacc65fae901ffd150e0c85a82ef
 
     public function getDebugInfo()
     {
-        return array (  124 => 28,  115 => 22,  111 => 21,  106 => 19,  102 => 18,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  121 => 25,  115 => 22,  111 => 21,  106 => 19,  102 => 18,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -171,7 +169,7 @@ class __TwigTemplate_9bd89b8f40fa6ef240fb9d6543a440fbacc65fae901ffd150e0c85a82ef
 \t\t\t\t<h1 class=\"tituloLogin\">
 \t\t\t\t\tGestor Pedidos
 \t\t\t\t</h1>
-\t\t\t\t<h4>Register</h4>
+\t\t\t\t<h4>Registrarse</h4>
 
 
 \t\t\t\t{{ form_start(registrationForm) }}
@@ -179,14 +177,12 @@ class __TwigTemplate_9bd89b8f40fa6ef240fb9d6543a440fbacc65fae901ffd150e0c85a82ef
 
 \t\t\t\t{{ form_row(registrationForm.plainPassword, {   label: 'Password'  }) }}
 \t\t\t\t{{ form_row(registrationForm.agreeTerms) }}
-\t\t\t\t
 
+\t\t\t\t<button type=\"submit\" class=\"btn\">Register</button>
+\t\t\t\t{{ form_end(registrationForm) }}
 
-\t\t\t\t
-        <button type=\"submit\" class=\"btn\">Register</button>
-    {{ form_end(registrationForm) }}
-\t\t\t\t
-\t\t\t\t<a href=\"/login\"> &nbsp&nbsp  Login</a>
+\t\t\t\t<a href=\"/login\">
+\t\t\t\t\t&nbsp&nbsp  Login</a>
 
 \t\t\t</div>
 \t\t</div>

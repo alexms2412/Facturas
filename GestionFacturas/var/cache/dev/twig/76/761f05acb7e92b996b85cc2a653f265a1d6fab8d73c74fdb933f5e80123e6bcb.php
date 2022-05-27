@@ -81,14 +81,7 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
 \t\t\t\t<a href=\"";
         // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_detalle_new");
-        echo "\"></a>
-\t\t\t
-\t\t\t\t<a href=\"";
-        // line 17
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pedido_index");
         echo "\">
-\t\t\t\t<br>
-\t\t\t\tVolver al listado</a>
 
 \t\t\t</div>
 \t\t</div>
@@ -116,7 +109,7 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
 
     public function getDebugInfo()
     {
-        return array (  88 => 17,  83 => 15,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  83 => 15,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -135,11 +128,7 @@ class __TwigTemplate_8e76af477617eae9dc0736d4c55601db345d441bea3cddd329c7e237381
 
 \t\t\t\t{{ include('detalle/_form.html.twig') }}
 
-\t\t\t\t<a href=\"{{ path('app_detalle_new') }}\"></a>
-\t\t\t
-\t\t\t\t<a href=\"{{ path('app_pedido_index') }}\">
-\t\t\t\t<br>
-\t\t\t\tVolver al listado</a>
+\t\t\t\t<a href=\"{{ path('app_detalle_new') }}\">
 
 \t\t\t</div>
 \t\t</div>

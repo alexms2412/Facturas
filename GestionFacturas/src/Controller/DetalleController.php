@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Detalle;
+use App\Entity\Pedido;
 use App\Form\DetalleType;
 use App\Repository\DetalleRepository;
 use App\Repository\PedidoRepository;
@@ -15,17 +16,13 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[Route('/detalle')]
 class DetalleController extends AbstractController
 {
-    #[Route('/', name: 'app_detalle_index', methods: ['GET'])]
-    public function index(DetalleRepository $detalleRepository): Response
-    {
-        return $this->render('detalle/index.html.twig', [
-            'detalles' => $detalleRepository->findAll(),
-        ]);
-    }
+   
 
     #[Route('/new', name: 'app_detalle_new', methods: ['GET', 'POST'])]
     public function new(Request $request, DetalleRepository $detalleRepository, PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
+
+        /** @var Empresa $empresa */
 
         $detalle = new Detalle(($pedidoRepository->findBy(
             array(), 
@@ -38,7 +35,9 @@ class DetalleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $detalleRepository->add($detalle);
-            return $this->redirectToRoute('app_detalle_new', [], Response::HTTP_SEE_OTHER);
+            $detalleRepository->add($detalle);
+            return $this->redirectToRoute('app_detalle_new_continuacion', [], Response::HTTP_SEE_OTHER);
+           
         }
 
 
@@ -46,31 +45,65 @@ class DetalleController extends AbstractController
            
             'detalle' => $detalle,
             'form' => $form,
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
-    #[Route('/{id}', name: 'app_detalle_show', methods: ['GET'])]
-    public function show(Detalle $detalle): Response
+    #[Route('/new_continuar', name: 'app_detalle_new_continuacion', methods: ['GET', 'POST'])]
+    public function new2(Request $request, DetalleRepository $detalleRepository, PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
-        return $this->render('detalle/show.html.twig', [
+
+        /** @var Empresa $empresa */
+
+        $detalle = new Detalle(($pedidoRepository->findBy(
+            array(), 
+            array('id' => 'DESC'),
+            1, 
+          ))[0  ]);
+
+        $form = $this->createForm(DetalleType::class, $detalle);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $detalleRepository->add($detalle);
+            return $this->redirectToRoute('app_detalle_new_continuacion', [], Response::HTTP_SEE_OTHER);
+        }
+
+
+        return $this->renderForm('detalle/newSecundario.html.twig', [
+           
             'detalle' => $detalle,
+            'form' => $form,
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
+
+
+
+
+
+
+
+
 
     #[Route('/{id}/edit', name: 'app_detalle_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Detalle $detalle, DetalleRepository $detalleRepository): Response
+    public function edit(Request $request, Detalle $detalle, DetalleRepository $detalleRepository,UserInterface $empresa): Response
     {
         $form = $this->createForm(DetalleType::class, $detalle);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $detalleRepository->add($detalle);
+            
             return $this->redirectToRoute('app_pedido_index', [], Response::HTTP_SEE_OTHER);
         }
+
+        /** @var Empresa $empresa */
 
         return $this->renderForm('detalle/edit.html.twig', [
             'detalle' => $detalle,
             'form' => $form,
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
@@ -81,6 +114,6 @@ class DetalleController extends AbstractController
             $detalleRepository->remove($detalle);
         }
 
-        return $this->redirectToRoute('app_detalle_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_pedido_index', [], Response::HTTP_SEE_OTHER);
     }
 }

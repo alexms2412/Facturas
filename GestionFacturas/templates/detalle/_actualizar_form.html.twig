@@ -1,0 +1,9 @@
+
+
+{{ form_start(form) }}
+    
+   <form method="post" action="{{ path('app_empresa_index') }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('update' ~ detalle.id) }}">
+    <button class="btn">Actualizar</button>
+</form>
+{{ form_end(form) }}

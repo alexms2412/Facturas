@@ -29,7 +29,7 @@
 		<table class="tablePedidos">
 			<thead>
 				<tr>
-					<th>Id</th>
+					<th>N.</th>
 					<th>Nombre</th>
 					<th>Precio</th>
 					<th>Descripcion</th>
@@ -37,9 +37,12 @@
 				</tr>
 			</thead>
 			<tbody>
+			{% set nombre = 0 %}
+			
 				{% for producto in productos %}
+				{% set nombre = nombre + 1 %}
 					<tr>
-						<td>{{ producto.id }}</td>
+						<td>{{ nombre }}</td>
 						<td>{{ producto.nombre }}</td>
 						<td>{{ producto.precio }} €</td>
 						<td>{{ producto.descripcion }}</td>

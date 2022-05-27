@@ -101,50 +101,66 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
 \t\t<table class=\"tablePedidos\">
 \t\t\t<thead>
 \t\t\t\t<tr>
-\t\t\t\t\t<th scope=\"col\">ID</th>
+\t\t\t\t\t<th scope=\"col\">N.</th>
 \t\t\t\t\t<th scope=\"col\">Nombre</th>
 \t\t\t\t\t<th scope=\"col\">Apellidos</th>
-
+\t\t\t\t\t<th scope=\"col\">DNI</th>
 \t\t\t\t\t<th scope=\"col\">Telefono</th>
 
 \t\t\t\t\t<th scope=\"col\">Actions</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
+
+";
+        // line 49
+        $context["nombre"] = 0;
+        // line 50
+        echo "
 \t\t\t\t";
-        // line 48
+        // line 51
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["clientes"]) || array_key_exists("clientes", $context) ? $context["clientes"] : (function () { throw new RuntimeError('Variable "clientes" does not exist.', 48, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["clientes"]) || array_key_exists("clientes", $context) ? $context["clientes"] : (function () { throw new RuntimeError('Variable "clientes" does not exist.', 51, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["cliente"]) {
-            // line 49
-            echo "\t\t\t\t\t<tr>
-\t\t\t\t\t\t<td>";
-            // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "id", [], "any", false, false, false, 50), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "nombre", [], "any", false, false, false, 51), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
             // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "apellidos", [], "any", false, false, false, 52), "html", null, true);
+            echo "
+\t\t\t\t";
+            // line 53
+            $context["nombre"] = ((isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 53, $this->source); })()) + 1);
+            // line 54
+            echo "
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td>";
+            // line 56
+            echo twig_escape_filter($this->env, (isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 56, $this->source); })()), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t<td>";
+            // line 57
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "nombre", [], "any", false, false, false, 57), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t<td>";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "apellidos", [], "any", false, false, false, 58), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t<td>";
+            // line 59
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "DNI", [], "any", false, false, false, 59), "html", null, true);
             echo "</td>
 
 \t\t\t\t\t\t<td>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "telefono", [], "any", false, false, false, 54), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cliente"], "telefono", [], "any", false, false, false, 61), "html", null, true);
             echo "</td>
 
 \t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t<a href=\"";
-            // line 57
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_show", ["id" => twig_get_attribute($this->env, $this->source, $context["cliente"], "id", [], "any", false, false, false, 57)]), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_show", ["id" => twig_get_attribute($this->env, $this->source, $context["cliente"], "id", [], "any", false, false, false, 64)]), "html", null, true);
             echo "\">Ver /</a>
 \t\t\t\t\t\t\t<a href=\"";
-            // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["cliente"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cliente_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["cliente"], "id", [], "any", false, false, false, 65)]), "html", null, true);
             echo "\">Editar</a>
 \t\t\t\t\t\t</td>
 \t\t\t\t\t</tr>
@@ -152,7 +168,7 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 62
+            // line 69
             echo "\t\t\t\t\t<tr>
 \t\t\t\t\t\t<td colspan=\"7\">No records found</td>
 \t\t\t\t\t</tr>
@@ -161,7 +177,7 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cliente'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 66
+        // line 73
         echo "\t\t\t</tbody>
 \t\t</table>
 
@@ -186,7 +202,7 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
 
     public function getDebugInfo()
     {
-        return array (  165 => 66,  156 => 62,  147 => 58,  143 => 57,  137 => 54,  132 => 52,  128 => 51,  124 => 50,  121 => 49,  116 => 48,  80 => 15,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  181 => 73,  172 => 69,  163 => 65,  159 => 64,  153 => 61,  148 => 59,  144 => 58,  140 => 57,  136 => 56,  132 => 54,  130 => 53,  127 => 52,  122 => 51,  119 => 50,  117 => 49,  80 => 15,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -228,21 +244,28 @@ class __TwigTemplate_8510d293dad90559a19f17805c495ffee8428f8e0950c4ad89af5617466
 \t\t<table class=\"tablePedidos\">
 \t\t\t<thead>
 \t\t\t\t<tr>
-\t\t\t\t\t<th scope=\"col\">ID</th>
+\t\t\t\t\t<th scope=\"col\">N.</th>
 \t\t\t\t\t<th scope=\"col\">Nombre</th>
 \t\t\t\t\t<th scope=\"col\">Apellidos</th>
-
+\t\t\t\t\t<th scope=\"col\">DNI</th>
 \t\t\t\t\t<th scope=\"col\">Telefono</th>
 
 \t\t\t\t\t<th scope=\"col\">Actions</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
+
+{% set nombre =  0 %}
+
 \t\t\t\t{% for cliente in clientes %}
+
+\t\t\t\t{% set nombre = nombre + 1 %}
+
 \t\t\t\t\t<tr>
-\t\t\t\t\t\t<td>{{ cliente.id }}</td>
+\t\t\t\t\t\t<td>{{ nombre}}</td>
 \t\t\t\t\t\t<td>{{ cliente.nombre }}</td>
 \t\t\t\t\t\t<td>{{ cliente.apellidos }}</td>
+\t\t\t\t\t\t<td>{{ cliente.DNI }}</td>
 
 \t\t\t\t\t\t<td>{{ cliente.telefono }}</td>
 

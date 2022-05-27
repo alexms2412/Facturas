@@ -44,7 +44,7 @@
 					<th>Acciones</th>
 				</tr>
 			</thead>
-			<a href="{{ path('app_detalle_new') }}">Añadir detalle</a>
+		
 			<tbody>
 				{% for detalle in detalles %}
 					{% if  detalle.pedido.getId()   ==  pedido.id  %}
@@ -79,4 +79,9 @@
 <div class="posicionAccionesShowDelete">
 	<br>
 	{{ include('pedido/_delete_form.html.twig') }}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </div></div>{% endblock %}

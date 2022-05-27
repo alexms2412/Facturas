@@ -10,29 +10,26 @@
         <thead>
             <tr>
                
-                <th>Username</th>
+            
                 <th>NombreEmpresa</th>
                 <th>CorreoElectronico</th>
-                <th>CodigoPostal</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Dni</th>
+                <th>NIF</th>
+               
+               
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+
+
         {% for empresa in empresas  %}
             <tr>
                 
-                <td>{{ empresa.username }}</td>
-      
-                
+            
                 <td>{{ empresa.nombreEmpresa }}</td>
                 <td>{{ empresa.correoElectronico }}</td>
-                <td>{{ empresa.codigoPostal }}</td>
-                <td>{{ empresa.direccion }}</td>
-                <td>{{ empresa.telefono }}</td>
                 <td>{{ empresa.dni }}</td>
+               
               
                 <td>
                     <a href="{{ path('app_empresa_show', {'id': empresa.id}) }}">Ver / </a>

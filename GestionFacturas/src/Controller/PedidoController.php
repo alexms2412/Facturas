@@ -22,22 +22,19 @@ class PedidoController extends AbstractController
 {
 
 
-
     #[Route('/', name: 'app_pedido_index', methods: ['GET'])]
     public function index(PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
-          /** @var Empresa $empresa */
+        /** @var Empresa $empresa */
 
         return $this->render('pedido/index.html.twig', [
             'pedidos' => $pedidoRepository->findBy(['empresa' => $empresa->getId()]),
-            
+            'empresa' => $empresa->getNombreEmpresa(),
+
         ]);
-
-        
-
     }
 
-    
+
     #[Route('/facturas', name: 'app_pedido_facturas', methods: ['GET'])]
     public function facturas(PedidoRepository $pedidoRepository, UserInterface $empresa): Response
     {
@@ -45,11 +42,12 @@ class PedidoController extends AbstractController
 
         return $this->render('pedido/indexFacturas.html.twig', [
             'pedidos' => $pedidoRepository->findBy(['empresa' => $empresa->getId()]),
-            
+            'empresa' => $empresa->getNombreEmpresa(),
+
         ]);
     }
 
-    
+
 
     #[Route('/new', name: 'app_pedido_new', methods: ['GET', 'POST'])]
     public function new(Request $request, PedidoRepository $pedidoRepository, DetalleRepository $detalleRepository, UserInterface $empresa): Response
@@ -66,25 +64,30 @@ class PedidoController extends AbstractController
         }
 
         return $this->renderForm('pedido/new.html.twig', [
-           // 'detalles' => $detalleRepository->findOneBy(),
+            // 'detalles' => $detalleRepository->findOneBy(),
+            //'pedido' => $pedidoRepository->findBy(['empresa' => $empresa->getId()]),
             'pedido' => $pedido,
             'form' => $form,
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
     #[Route('/{id}', name: 'app_pedido_show', methods: ['GET'])]
-    public function show(Pedido $pedido, DetalleRepository $detalleRepository): Response
+    public function show(Pedido $pedido, DetalleRepository $detalleRepository, UserInterface $empresa): Response
     {
+        /** @var Empresa $empresa */
         return $this->render('pedido/show.html.twig', [
             'pedido' => $pedido,
             'detalles' => $detalleRepository->findAll(),
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
 
     #[Route('/{id}/edit', name: 'app_pedido_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Pedido $pedido, PedidoRepository $pedidoRepository,DetalleRepository $detalleRepository): Response
+    public function edit( UserInterface $empresa,Request $request, Pedido $pedido, PedidoRepository $pedidoRepository, DetalleRepository $detalleRepository): Response
     {
+         /** @var Empresa $empresa */
         $form = $this->createForm(PedidoType::class, $pedido);
         $form->handleRequest($request);
 
@@ -97,14 +100,17 @@ class PedidoController extends AbstractController
             'pedido' => $pedido,
             'form' => $form,
             'detalles' => $detalleRepository->findAll(),
+            'empresa' => $empresa->getNombreEmpresa(),
         ]);
     }
 
     #[Route('/{id}', name: 'app_pedido_delete', methods: ['POST'])]
     public function delete(Request $request, Pedido $pedido, PedidoRepository $pedidoRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$pedido->getId(), $request->request->get('_token'))) {
+
+        if ($this->isCsrfTokenValid('delete' . $pedido->getId(), $request->request->get('_token'))) {
             $pedidoRepository->remove($pedido);
+            //$detalleRepository->remove($detalle->get());
         }
 
         return $this->redirectToRoute('app_pedido_index', [], Response::HTTP_SEE_OTHER);

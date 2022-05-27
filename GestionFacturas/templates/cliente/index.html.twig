@@ -35,21 +35,28 @@
 		<table class="tablePedidos">
 			<thead>
 				<tr>
-					<th scope="col">ID</th>
+					<th scope="col">N.</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Apellidos</th>
-
+					<th scope="col">DNI</th>
 					<th scope="col">Telefono</th>
 
 					<th scope="col">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
+
+{% set nombre =  0 %}
+
 				{% for cliente in clientes %}
+
+				{% set nombre = nombre + 1 %}
+
 					<tr>
-						<td>{{ cliente.id }}</td>
+						<td>{{ nombre}}</td>
 						<td>{{ cliente.nombre }}</td>
 						<td>{{ cliente.apellidos }}</td>
+						<td>{{ cliente.DNI }}</td>
 
 						<td>{{ cliente.telefono }}</td>
 

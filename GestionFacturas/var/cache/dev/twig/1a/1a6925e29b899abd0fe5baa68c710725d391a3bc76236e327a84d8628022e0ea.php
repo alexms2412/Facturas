@@ -73,65 +73,50 @@ class __TwigTemplate_dc8845be030f866a9d2f26a11ab99c585386c715532bce1fa59e15f1c45
         <thead>
             <tr>
                
-                <th>Username</th>
+            
                 <th>NombreEmpresa</th>
                 <th>CorreoElectronico</th>
-                <th>CodigoPostal</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Dni</th>
+                <th>NIF</th>
+               
+               
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+
+
         ";
-        // line 24
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["empresas"]) || array_key_exists("empresas", $context) ? $context["empresas"] : (function () { throw new RuntimeError('Variable "empresas" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["empresas"]) || array_key_exists("empresas", $context) ? $context["empresas"] : (function () { throw new RuntimeError('Variable "empresas" does not exist.', 25, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["empresa"]) {
-            // line 25
+            // line 26
             echo "            <tr>
                 
+            
                 <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "username", [], "any", false, false, false, 27), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "nombreEmpresa", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
-      
-                
                 <td>";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "nombreEmpresa", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "correoElectronico", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
                 <td>";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "correoElectronico", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "dni", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
-                <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "codigoPostal", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "direccion", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "telefono", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["empresa"], "dni", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
+               
               
                 <td>
                     <a href=\"";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_empresa_show", ["id" => twig_get_attribute($this->env, $this->source, $context["empresa"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_empresa_show", ["id" => twig_get_attribute($this->env, $this->source, $context["empresa"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             echo "\">Ver / </a>
                     <a href=\"";
-            // line 39
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_empresa_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["empresa"], "id", [], "any", false, false, false, 39)]), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_empresa_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["empresa"], "id", [], "any", false, false, false, 36)]), "html", null, true);
             echo "\">Editar</a>
                 </td>
             </tr>
@@ -139,7 +124,7 @@ class __TwigTemplate_dc8845be030f866a9d2f26a11ab99c585386c715532bce1fa59e15f1c45
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 43
+            // line 40
             echo "            <tr>
                 <td colspan=\"12\">no records found</td>
             </tr>
@@ -148,7 +133,7 @@ class __TwigTemplate_dc8845be030f866a9d2f26a11ab99c585386c715532bce1fa59e15f1c45
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['empresa'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 44
         echo "        </tbody>
     </table>
 
@@ -173,7 +158,7 @@ class __TwigTemplate_dc8845be030f866a9d2f26a11ab99c585386c715532bce1fa59e15f1c45
 
     public function getDebugInfo()
     {
-        return array (  152 => 47,  143 => 43,  134 => 39,  130 => 38,  124 => 35,  120 => 34,  116 => 33,  112 => 32,  108 => 31,  104 => 30,  98 => 27,  94 => 25,  89 => 24,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  137 => 44,  128 => 40,  119 => 36,  115 => 35,  108 => 31,  104 => 30,  100 => 29,  95 => 26,  90 => 25,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -190,29 +175,26 @@ class __TwigTemplate_dc8845be030f866a9d2f26a11ab99c585386c715532bce1fa59e15f1c45
         <thead>
             <tr>
                
-                <th>Username</th>
+            
                 <th>NombreEmpresa</th>
                 <th>CorreoElectronico</th>
-                <th>CodigoPostal</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Dni</th>
+                <th>NIF</th>
+               
+               
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+
+
         {% for empresa in empresas  %}
             <tr>
                 
-                <td>{{ empresa.username }}</td>
-      
-                
+            
                 <td>{{ empresa.nombreEmpresa }}</td>
                 <td>{{ empresa.correoElectronico }}</td>
-                <td>{{ empresa.codigoPostal }}</td>
-                <td>{{ empresa.direccion }}</td>
-                <td>{{ empresa.telefono }}</td>
                 <td>{{ empresa.dni }}</td>
+               
               
                 <td>
                     <a href=\"{{ path('app_empresa_show', {'id': empresa.id}) }}\">Ver / </a>

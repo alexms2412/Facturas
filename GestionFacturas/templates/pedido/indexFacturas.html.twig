@@ -4,6 +4,9 @@
 {% block contenido %}
 
 	<br>
+
+	{% set nombre = 0 %}
+
 	<div>
 
 		<div>
@@ -34,7 +37,7 @@
 		<table class="tablePedidos">
 			<thead>
 				<tr>
-					<th scope="col">ID</th>
+					<th scope="col">N.</th>
 					<th scope="col">Fecha</th>
 					<th scope="col">Nombre Factura</th>
 					<th scope="col">Cliente</th>
@@ -47,20 +50,21 @@
 
 					{% if pedido.estado == true %}
 
+						{% set nombre = nombre + 1 %}
+
+
 
 						<tr>
-							<td>{{ pedido.id }}</td>
+							<td>{{ nombre }}</td>
 							<td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d') : '' }}</td>
 							<td>{{ pedido.nombrePedido }}</td>
 							<td>{{ pedido.Cliente}}
 							</td>
 							<td>
 
-								<a href="{{ path('app_pedido_show', {'id': pedido.id}) }}">Ver /
+								<a href="{{ path('app_pedido_show', {'id': pedido.id}) }}">Ver 
 								</a>
-								<a href="/descargar">
-									<i class="fa fa-download" aria-hidden="true"></i>
-								</a>
+								{{ include('pedido/_delete_form_factura.html.twig') }}
 
 							</td>
 
@@ -78,46 +82,7 @@
 			</tbody>
 		</table>
 
-		<div class="posicionpaginado">
-			<ul class="pagination">
-				<li>
-					<a href="#">«</a>
-				</li>
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a class="active" href="#">2</a>
-				</li>
-				<li>
-					<a href="#">3</a>
-				</li>
-				<li>
-					<a href="#">4</a>
-				</li>
-				<li>
-					<a href="#">5</a>
-				</li>
-				<li>
-					<a href="#">6</a>
-				</li>
-				<li>
-					<a href="#">7</a>
-				</li>
-				<li>
-					<a href="#">»</a>
-				</li>
-			</ul>
 
-		</div>
-
-		{% include 'pagination.html.twig' with {
-			currentFilters: { myFilter: filtervariables },
-			currentPage: page,
-			paginationPath: "myroute",
-			lastPage: totalPages,
-			showAlwaysFirstAndLast: true
-		} only %}
-
+	
 
 	{% endblock %}

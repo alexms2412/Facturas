@@ -68,7 +68,10 @@ class __TwigTemplate_02ef04958cb3b914d212f4c4de46ac659469f7ef218b5a05883459b2ccf
         // line 5
         echo "
 \t<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-\t\t<a class=\" titulo\" href=\"/pedido\">N. Empresa
+\t\t<a class=\" titulo\" href=\"/pedido\">";
+        // line 7
+        echo twig_escape_filter($this->env, (isset($context["empresa"]) || array_key_exists("empresa", $context) ? $context["empresa"] : (function () { throw new RuntimeError('Variable "empresa" does not exist.', 7, $this->source); })()), "html", null, true);
+        echo "
 \t\t</a>
 \t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t\t<span class=\"navbar-toggler-icon\"></span>
@@ -158,7 +161,7 @@ class __TwigTemplate_02ef04958cb3b914d212f4c4de46ac659469f7ef218b5a05883459b2ccf
 
     public function getDebugInfo()
     {
-        return array (  123 => 51,  89 => 20,  81 => 15,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  126 => 51,  92 => 20,  84 => 15,  73 => 7,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -169,7 +172,7 @@ class __TwigTemplate_02ef04958cb3b914d212f4c4de46ac659469f7ef218b5a05883459b2ccf
 {% block body %}
 
 \t<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-\t\t<a class=\" titulo\" href=\"/pedido\">N. Empresa
+\t\t<a class=\" titulo\" href=\"/pedido\">{{ empresa }}
 \t\t</a>
 \t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t\t<span class=\"navbar-toggler-icon\"></span>

@@ -119,10 +119,7 @@ class __TwigTemplate_ab739ca6a3be0ca9c8dbbc73c072e78b050a14ee31aba54ff43bf25c09c
 \t\t\t\t\t<th>Acciones</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
-\t\t\t<a href=\"";
-        // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_detalle_new");
-        echo "\">Añadir detalle</a>
+\t\t
 \t\t\t<tbody>
 \t\t\t\t";
         // line 49
@@ -200,6 +197,11 @@ class __TwigTemplate_ab739ca6a3be0ca9c8dbbc73c072e78b050a14ee31aba54ff43bf25c09c
         // line 81
         echo twig_include($this->env, $context, "pedido/_delete_form.html.twig");
         echo "
+\t<br>
+\t<br>
+\t<br>
+\t<br>
+\t<br>
 </div></div>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -221,7 +223,7 @@ class __TwigTemplate_ab739ca6a3be0ca9c8dbbc73c072e78b050a14ee31aba54ff43bf25c09c
 
     public function getDebugInfo()
     {
-        return array (  201 => 81,  191 => 73,  182 => 69,  176 => 67,  170 => 64,  162 => 59,  159 => 58,  157 => 57,  152 => 55,  148 => 54,  144 => 53,  140 => 52,  137 => 51,  134 => 50,  129 => 49,  124 => 47,  101 => 27,  96 => 25,  92 => 24,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  198 => 81,  188 => 73,  179 => 69,  173 => 67,  167 => 64,  159 => 59,  156 => 58,  154 => 57,  149 => 55,  145 => 54,  141 => 53,  137 => 52,  134 => 51,  131 => 50,  126 => 49,  101 => 27,  96 => 25,  92 => 24,  78 => 13,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -272,7 +274,7 @@ class __TwigTemplate_ab739ca6a3be0ca9c8dbbc73c072e78b050a14ee31aba54ff43bf25c09c
 \t\t\t\t\t<th>Acciones</th>
 \t\t\t\t</tr>
 \t\t\t</thead>
-\t\t\t<a href=\"{{ path('app_detalle_new') }}\">Añadir detalle</a>
+\t\t
 \t\t\t<tbody>
 \t\t\t\t{% for detalle in detalles %}
 \t\t\t\t\t{% if  detalle.pedido.getId()   ==  pedido.id  %}
@@ -307,6 +309,11 @@ class __TwigTemplate_ab739ca6a3be0ca9c8dbbc73c072e78b050a14ee31aba54ff43bf25c09c
 <div class=\"posicionAccionesShowDelete\">
 \t<br>
 \t{{ include('pedido/_delete_form.html.twig') }}
+\t<br>
+\t<br>
+\t<br>
+\t<br>
+\t<br>
 </div></div>{% endblock %}
 ", "pedido/edit.html.twig", "C:\\Users\\aleol\\Desktop\\Pedidos\\GestionFacturas\\templates\\pedido\\edit.html.twig");
     }

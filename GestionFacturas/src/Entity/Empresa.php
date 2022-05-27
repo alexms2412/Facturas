@@ -141,6 +141,10 @@ class Empresa implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+    /**
+     * @see UserInterface
+     */
+
     public function getNombreEmpresa(): ?string
     {
         return $this->nombreEmpresa;
